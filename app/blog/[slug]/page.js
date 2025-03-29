@@ -4,7 +4,7 @@ import "./page.css";
 import { useParams } from "next/navigation";
 import useArticles from "@/hooks/useArticles";
 
-export default function page() {
+export default function Page() {
   const { Article, isLoading, error } = useArticles();
   const params = useParams();
 
