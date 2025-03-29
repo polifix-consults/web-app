@@ -2,6 +2,7 @@
 import useArticles from "@/hooks/useArticles";
 import { useSubscribe } from "@/hooks/useSubscriber";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation"; // App Router imports
 import { useState } from "react";
 
@@ -15,6 +16,13 @@ export default function Home() {
     Mutate({ subscriber: sub });
   }
   const { Article, isLoading, error } = useArticles();
+  // Function to scroll to the "Get Started" section
+  const handleGetStartedClick = () => {
+    const getStartedSection = document.getElementById("get-started-section");
+    if (getStartedSection) {
+      getStartedSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const handleLatestClick = () => {
     router.push("/?sort=latest"); // Correct syntax for App Router: use a string URL
   };
@@ -46,12 +54,12 @@ export default function Home() {
             leaders, and changemakers.
           </p>
           <div>
-            <button className="btn-hero">GET STARTED</button>
+            <button onClick={handleGetStartedClick} className="btn-hero">GET STARTED</button>
           </div>
         </article>
       </section>
 
-      <section className="content">
+      <section id="get-started-section" className="content">
         <div className="sect_blog">
           <nav className="blog-nav">
             <button
@@ -74,16 +82,18 @@ export default function Home() {
           <div className="blogListContainer">
             {Article.Article.map((index) => (
               <article className="blogList" key={index.slug}>
-                <h2>{index.article_title}</h2>
-                <div className="blogListDescript">
-                  <p>{index.article_body.slice(0, 200) + "..."}</p>
-                  <figure className="blogListImgBox">
-                    <img
-                      src={index.article_img}
-                      alt="Digital Government Reform Illustration"
-                    />
-                  </figure>
-                </div>
+                <Link href={`/blog/${index.slug}`}>
+                  <h2>{index.article_title}</h2>
+                  <div className="blogListDescript">
+                    <p>{index.article_body.slice(0, 200) + "..."}</p>
+                    <figure className="blogListImgBox">
+                      <img
+                        src={index.article_img}
+                        alt="Digital Government Reform Illustration"
+                      />
+                    </figure>
+                  </div>
+                </Link>
               </article>
             ))}
           </div>
@@ -134,7 +144,7 @@ export default function Home() {
                   <a href="#">
                     <img src="spotify.svg" alt="Listen on Spotify" />
                   </a>
-                  <a href="#">
+                  <a href="https://www.youtube.com/@TheCivicPolicyArchive">
                     <img src="youtube.svg" alt="Watch on YouTube" />
                   </a>
                 </div>
