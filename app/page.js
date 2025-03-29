@@ -25,8 +25,6 @@ export default function Home() {
     }
   };
 
-  if (isLoading) return <div>Loading...</div>;
-
   return (
     <main>
       <section className="hero">
@@ -62,22 +60,26 @@ export default function Home() {
             </Suspense>
           </nav>
           <div className="blogListContainer">
-            {Article.Article.map((index) => (
-              <article className="blogList" key={index.slug}>
-                <Link href={`/blog/${index.slug}`}>
-                  <h2>{index.article_title}</h2>
-                  <div className="blogListDescript">
-                    <p>{index.article_body.slice(0, 200) + "..."}</p>
-                    <figure className="blogListImgBox">
-                      <img
-                        src={index.article_img}
-                        alt="Digital Government Reform Illustration"
-                      />
-                    </figure>
-                  </div>
-                </Link>
-              </article>
-            ))}
+            {!isLoading ? (
+              Article.Article.map((index) => (
+                <article className="blogList" key={index.slug}>
+                  <Link href={`/blog/${index.slug}`}>
+                    <h2>{index.article_title}</h2>
+                    <div className="blogListDescript">
+                      <p>{index.article_body.slice(0, 200) + "..."}</p>
+                      <figure className="blogListImgBox">
+                        <img
+                          src={index.article_img}
+                          alt="Digital Government Reform Illustration"
+                        />
+                      </figure>
+                    </div>
+                  </Link>
+                </article>
+              ))
+            ) : (
+              <div>Loading...</div>
+            )}
           </div>
         </div>
 
