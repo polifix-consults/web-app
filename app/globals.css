@@ -306,7 +306,7 @@ body {
 .podcastBox {
   height: 502px;
   width: 100%;
-  background-image: url("../public/podcasttt.jpg");
+  background-image: url("/podcasttt.jpg");
   background-size: contain;
 }
 
