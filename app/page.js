@@ -1,15 +1,16 @@
 "use client";
+import BlogNav from "@/component/BlogNav";
 import useArticles from "@/hooks/useArticles";
 import { useSubscribe } from "@/hooks/useSubscriber";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation"; // App Router imports
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 export default function Home() {
   const [sub, setSub] = useState(" ");
   const { Mutate, isLoading: sending } = useSubscribe();
-  const router = useRouter();
+
   function OnSubscribe(e) {
     e.preventDefault();
     console.log(sub);
@@ -23,15 +24,7 @@ export default function Home() {
       getStartedSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const handleLatestClick = () => {
-    router.push("/?sort=latest"); // Correct syntax for App Router: use a string URL
-  };
-  const handlePopularClick = () => {
-    router.push("/?sort=popular"); // Correct syntax for App Router: use a string URL
-  };
 
-  const searchParams = useSearchParams(); // Get query params in App Router
-  const sort = searchParams.get("sort"); // Extract the "sort" query param (e.g., "latest")
   if (isLoading) return <div>Loading...</div>;
 
   return (
@@ -54,7 +47,9 @@ export default function Home() {
             leaders, and changemakers.
           </p>
           <div>
-            <button onClick={handleGetStartedClick} className="btn-hero">GET STARTED</button>
+            <button onClick={handleGetStartedClick} className="btn-hero">
+              GET STARTED
+            </button>
           </div>
         </article>
       </section>
@@ -62,22 +57,9 @@ export default function Home() {
       <section id="get-started-section" className="content">
         <div className="sect_blog">
           <nav className="blog-nav">
-            <button
-              onClick={() => {
-                handleLatestClick();
-              }}
-              className={`${sort === "latest" ? "active-filter" : "filter"}`}
-            >
-              Latest
-            </button>
-            <button
-              onClick={() => {
-                handlePopularClick();
-              }}
-              className={`${sort === "popular" ? "active-filter" : "filter"}`}
-            >
-              Popular
-            </button>
+            <Suspense fallback={<div>Loading...</div>}>
+              <BlogNav />
+            </Suspense>
           </nav>
           <div className="blogListContainer">
             {Article.Article.map((index) => (
