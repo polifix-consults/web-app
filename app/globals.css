@@ -1,42 +1,409 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* Body Styling */
+body {
+  background: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Main Container */
+.container {
+  max-width: 1500px; /* Maximum width for content */
+  margin: 0 auto; /* Center content */
+  padding: 15px 15px; /* Add some padding for smaller screens */
+  @media (max-width: 600px) {
+    margin: 10px;
+    padding: 0;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* Header Styles */
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.navs {
+  display: flex;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
+.navs a,
+.blog-nav a {
+  background-color: #f5f5f5;
+  padding: 0.5rem 1.5rem;
+  font-size: 10pt;
   text-decoration: none;
+  color: #000;
+  font-family: "Playfair Display";
+  outline: none;
+  border: none;
+}
+.active-filter {
+  background-color: #c4af8c;
+  padding: 0.5rem 1.5rem;
+  font-size: 10pt;
+  text-decoration: none;
+  color: #000;
+  font-family: "Playfair Display";
+  outline: none;
+  border: none;
+}
+.filter {
+  background-color: #f5f5f5;
+  padding: 0.5rem 1.5rem;
+  font-size: 10pt;
+  text-decoration: none;
+  color: #000;
+  font-family: "Playfair Display";
+  outline: none;
+  border: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Button Styles */
+.btn-head,
+.btn-hero,
+.newsletter button {
+  background-color: #000;
+  color: #fff;
+  font-family: "Trajan Pro";
+  text-transform: uppercase;
+}
+
+.btn-head {
+  padding: 0.5rem 1.5rem;
+  font-size: 10pt;
+}
+
+.btn-hero {
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    font-size: 14px; /* More readable font size */
+    padding: 8px;
+  }
+}
+
+.newsletter button {
+  font-size: 16px;
+  padding: 10px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  padding: 1rem;
+  border: 1pt solid black;
+  margin: 2rem 0;
+}
+
+.img-box {
+  width: 50%;
+  height: 50vh;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  width: 50%;
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-content h1 {
+  color: #c4af8c;
+  font-family: "Trajan Pro";
+  font-size: 40px;
+}
+
+/* Common Text Styles */
+.hero-content p,
+.newsletter p,
+.blogListDescript p {
+  color: #000;
+  font-family: "Playfair Display";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hero-content p {
+  line-height: 40px;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9.2rem;
+}
+
+.sect_blog {
+  width: 50%;
+}
+
+.sect_otherProds {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Blog Styles */
+.blog-nav {
+  display: flex;
+}
+
+.blogList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1pt solid #d9d9d9;
+}
+
+.blogList h2,
+.newsletter h2 {
+  color: #000;
+  font-family: "Trajan Pro";
+  font-size: 18px;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    font-size: 16px;
+  }
+}
+
+.blogList h2 {
+  border-bottom: 1pt solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.blogListDescript {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blogListDescript p {
+  width: 60%;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    width: 70%;
+  }
+}
+
+.blogListImgBox {
+  width: 30%;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    width: 40%;
+  }
+}
+
+.blogListImgBox img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Newsletter Styles */
+.newsletter {
+  margin-bottom: 3rem;
+}
+
+.newsHead {
+  color: #000;
+  font-family: "Playfair Display";
+  font-size: 16px;
+  background: #f5f5f5;
+  padding: 10px;
+  border-left: 3pt solid #c4af8c;
+}
+
+.newsletterInput {
+  padding: 15px 10px;
+  width: 80%;
+  color: #000;
+  font-family: "Playfair Display";
+  font-size: 16px;
+  border: 1pt solid #000;
+  border-right: none;
+  outline: none;
+}
+
+.newsletter form {
+  display: flex;
+  width: 100%;
+}
+
+/* Podcast Styles */
+.podcastBoard {
+  background-color: #000;
+  padding: 1.43rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.podcastBoard h2 {
+  color: #fff;
+  font-family: "Instrument Sans";
+  font-size: 17.959px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cta-podBox {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 0.5rem;
+  }
+}
+
+.cta-podBox p {
+  color: #000;
+  font-family: "Instrument Sans";
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #c4af8c;
+  padding: 1rem;
+  border-right: 4pt solid white;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    font-size: 14px;
+    border-right: 1px solid white;
+  }
+}
+
+.podcastIcons {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.podcastBox {
+  height: 502px;
+  width: 100%;
+  background-image: url("../public/podcasttt.jpg");
+  background-size: contain;
+}
+
+/* Footer Styles */
+footer {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.foot_navs {
+  display: flex;
+  gap: 2rem;
+  color: #000;
+}
+.foot_navs a {
+  text-decoration: underline;
+  color: #000;
+}
+.foot-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  place-items: left;
+}
+/* Tablet (577px and up) */
+
+/* Mobile (320px and up) */
+@media screen and (min-width: 320px) and (max-width: 800px) {
+  .foot-left img {
+    width: 150px;
+  }
+  .foot_navs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .foot-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    place-items: center;
+  }
+  .podcastIcons {
+    justify-content: center;
+  }
+  .head img {
+    width: 80px;
+  }
+  .navs {
+    font-size: 1px;
+  }
+  .btn-head {
+    padding: 0.2rem 1rem;
+    font-size: 6pt;
+  }
+
+  .hero .img-box {
+    width: 90vw;
+  }
+  .hero-content {
+    width: 90vw;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    border: none;
+    margin: 0rem 0;
+    align-items: center;
+  }
+  .hero-content h1 {
+    color: #c4af8c;
+    font-family: "Trajan Pro";
+    font-size: 34px;
+  }
+
+  /* Common Text Styles */
+  .hero-content p,
+  .newsletter p,
+  .blogListDescript p {
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .hero-content p {
+    line-height: 30px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 4rem;
+  }
+  .sect_blog {
+    width: 100%;
+  }
+
+  .sect_otherProds {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }

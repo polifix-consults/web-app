@@ -1,95 +1,148 @@
+"use client";
+import useArticles from "@/hooks/useArticles";
+import { useSubscribe } from "@/hooks/useSubscriber";
 import Image from "next/image";
-import styles from "./page.module.css";
+import { useRouter, useSearchParams } from "next/navigation"; // App Router imports
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [sub, setSub] = useState(" ");
+  const { Mutate, isLoading: sending } = useSubscribe();
+  const router = useRouter();
+  function OnSubscribe(e) {
+    e.preventDefault();
+    console.log(sub);
+    Mutate({ subscriber: sub });
+  }
+  const { Article, isLoading, error } = useArticles();
+  const handleLatestClick = () => {
+    router.push("/?sort=latest"); // Correct syntax for App Router: use a string URL
+  };
+  const handlePopularClick = () => {
+    router.push("/?sort=popular"); // Correct syntax for App Router: use a string URL
+  };
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const searchParams = useSearchParams(); // Get query params in App Router
+  const sort = searchParams.get("sort"); // Extract the "sort" query param (e.g., "latest")
+  if (isLoading) return <div>Loading...</div>;
+
+  return (
+    <main>
+      <section className="hero">
+        <figure className="img-box">
+          <img
+            className="img-boxImage"
+            src="HeroImage.png"
+            alt="Governance and Policy Illustration"
+          />
+        </figure>
+        <article className="hero-content">
+          <h1>UNVEILING THE ART OF GOVERNANCE</h1>
+          <p>
+            Dive into a dynamic repository of ideas, analysis, and solutions
+            shaping the world of policy and statecraft. From historical lessons
+            to modern challenges, explore the strategies, debates, and decisions
+            that define how societies are governed—crafted for thinkers,
+            leaders, and changemakers.
+          </p>
+          <div>
+            <button className="btn-hero">GET STARTED</button>
+          </div>
+        </article>
+      </section>
+
+      <section className="content">
+        <div className="sect_blog">
+          <nav className="blog-nav">
+            <button
+              onClick={() => {
+                handleLatestClick();
+              }}
+              className={`${sort === "latest" ? "active-filter" : "filter"}`}
+            >
+              Latest
+            </button>
+            <button
+              onClick={() => {
+                handlePopularClick();
+              }}
+              className={`${sort === "popular" ? "active-filter" : "filter"}`}
+            >
+              Popular
+            </button>
+          </nav>
+          <div className="blogListContainer">
+            {Article.Article.map((index) => (
+              <article className="blogList" key={index.slug}>
+                <h2>{index.article_title}</h2>
+                <div className="blogListDescript">
+                  <p>{index.article_body.slice(0, 200) + "..."}</p>
+                  <figure className="blogListImgBox">
+                    <img
+                      src={index.article_img}
+                      alt="Digital Government Reform Illustration"
+                    />
+                  </figure>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <aside className="sect_otherProds">
+          <section className="newsletter">
+            <h3 className="newsHead">Newsletter</h3>
+            <h2>DISPATCH</h2>
+            <p>
+              Sign up to read exclusive articles and insights on the dispatch
+            </p>
+            <form
+              onSubmit={(e) => {
+                OnSubscribe(e);
+              }}
+            >
+              <input
+                className="newsletterInput"
+                type="email"
+                placeholder="Email address"
+                aria-label="Email address"
+                value={sub}
+                onChange={(e) => setSub(e.target.value)}
+              />
+              <button className="btn-newsletter" type="submit">
+                {sending ? "Sending..." : "Subscribe"}
+              </button>
+            </form>
+          </section>
+
+          <section className="podcast">
+            <h3 className="newsHead">Podcast</h3>
+            <article>
+              <div className="podcastBox"></div>
+              <div className="podcastBoard">
+                <h2>
+                  A DIGITAL REPOSITORY FOR EXPLORING VARIOUS POLICY AND
+                  STATECRAFT ISSUES AND TOPICS
+                </h2>
+                <div className="cta-podBox">
+                  <p>WATCH!</p>
+                  <p>ENJOY!</p>
+                  <p>SHARE!</p>
+                  <p>SUBSCRIBE!</p>
+                </div>
+                <div className="podcastIcons">
+                  <a href="#">
+                    <img src="spotify.svg" alt="Listen on Spotify" />
+                  </a>
+                  <a href="#">
+                    <img src="youtube.svg" alt="Watch on YouTube" />
+                  </a>
+                </div>
+              </div>
+            </article>
+          </section>
+        </aside>
+      </section>
+    </main>
   );
 }
