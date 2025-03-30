@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 
 @font-face {
   font-family: "Trajan Pro";
@@ -13,84 +12,69 @@
   font-family: "Trajan Pro";
   src: url("/fonts/TrajanPro-Bold.woff") format("woff");
   font-weight: bold;
-  font-style: normal;
 }
 
-
-
-/* Body Styling */
+/* Base Styles */
 body {
   background: #fdfdfd;
   color: #333;
   margin: 0;
   padding: 0;
-  font-family: "Playfair Display", serif;
-  font-family: "Trajan Pro", serif;
+  font-family: "Playfair Display", "Trajan Pro", serif;
 }
 
-/* Main Container */
 .container {
-  max-width: 1500px; /* Maximum width for content */
-  margin: 0 auto; /* Center content */
-  padding: 15px 15px; /* Add some padding for smaller screens */
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 15px;
   @media (max-width: 600px) {
     margin: 10px;
     padding: 0;
   }
 }
 
-/* Header Styles */
+/* Header */
 .head {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 800px) {
+    & img {
+      width: 80px;
+    }
+  }
 }
 
 .navs {
   display: flex;
 }
 
-.blog-nav a {
-  background-color: #f5f5f5;
+.blog-nav a,
+.filter {
+  background: #f5f5f5;
   padding: 0.5rem 1.5rem;
   font-size: 10pt;
   text-decoration: none;
   color: #000;
   font-family: "Playfair Display";
-  outline: none;
   border: none;
+  outline: none;
 }
+
 .active-filter {
-  background-color: #c4af8c;
-  padding: 0.5rem 1.5rem;
-  font-size: 10pt;
-  text-decoration: none;
-  color: #000;
-  font-family: "Playfair Display";
-  outline: none;
-  border: none;
+  background: #c4af8c;
 }
+
 .active {
-  background-color: white;
+  background: white;
   border: 1pt solid black;
 }
 
-.filter {
-  background-color: #f5f5f5;
-  padding: 0.5rem 1.5rem;
-  font-size: 10pt;
-  text-decoration: none;
-  color: #000;
-  font-family: "Playfair Display";
-  outline: none;
-  border: none;
-}
-
-/* Button Styles */
+/* Buttons */
 .btn-head,
 .btn-hero,
 .newsletter button {
-  background-color: #000;
+  background: #000;
   color: #fff;
   font-family: "Trajan Pro";
   text-transform: uppercase;
@@ -99,36 +83,61 @@ body {
 .btn-head {
   padding: 0.5rem 1.5rem;
   font-size: 10pt;
+  @media screen and (max-width: 800px) {
+    padding: 0.2rem 1rem;
+    font-size: 6pt;
+  }
 }
 
 .btn-hero {
-  padding: 10px;
+  padding: 15px 60px;
   font-size: 16px;
+  gap: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  
   @media screen and (min-width: 320px) and (max-width: 800px) {
-    font-size: 14px; /* More readable font size */
-    padding: 8px;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    
+    
   }
 }
 
 .newsletter button {
-  font-size: 16px;
   padding: 10px;
+  font-size: 16px;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    padding: 5px;
+    font-size: 12px;
+    
+  }
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   display: flex;
   padding: 1rem;
   border: 1pt solid black;
   margin: 2rem 0;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    margin: 0;
+    align-items: center;
+
+  }
 }
 
 .img-box {
   width: 50%;
   height: 50vh;
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+  }
 }
 
 .img-box img {
@@ -142,16 +151,21 @@ body {
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+  }
 }
 
 .hero-content h1 {
   color: #c4af8c;
   font-family: "Trajan Pro";
   font-size: 40px;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    font-size: 28px;
+  }
 }
 
-/* Common Text Styles */
+/* Text Styles */
 .hero-content p,
 .newsletter p,
 .blogListDescript p {
@@ -159,40 +173,59 @@ body {
   font-family: "Playfair Display";
   font-size: 16px;
   font-weight: 400;
+  @media  screen and (min-width: 320px) and (max-width: 800px) {
+    font-size: 10px;
+    
+  }
 }
 
 .hero-content p {
   line-height: 40px;
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
+    line-height: 30px;
+  }
 }
 
-/* Content Section */
+/* Content */
 .content {
   display: flex;
   justify-content: space-between;
   margin-top: 9.2rem;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 4rem;
+  }
 }
 
 .sect_blog {
   width: 50%;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 }
 
 .sect_otherProds {
   width: 40%;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 }
 
-/* Blog Styles */
-.blog-nav {
-  display: flex;
-}
-
+/* Blog */
 .blogList {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1pt solid #d9d9d9;
+  @media  screen and (min-width: 320px) and (max-width: 820px) {
+    padding: 0.5rem;
+    
+  }
 }
 
 .blogList h2,
@@ -200,42 +233,52 @@ body {
   color: #000;
   font-family: "Trajan Pro";
   font-size: 18px;
-  @media screen and (min-width: 320px) and (max-width: 800px) {
+  @media screen and (max-width: 800px) {
     font-size: 16px;
   }
 }
+
 .blogList a {
-  display: block;
   text-decoration: none;
   color: inherit;
   padding: 10px;
 }
 
 .blogList a:hover {
-  background-color: #eeeeee;
+  background: #eeeeee;
   transition: background-color 0.3s ease;
 }
+
 .blogList h2 {
   border-bottom: 1pt solid #000;
   padding-bottom: 0.5rem;
+  
 }
 
 .blogListDescript {
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    width: 100%;
+    
+  }
 }
 
 .blogListDescript p {
   width: 60%;
-  @media screen and (min-width: 320px) and (max-width: 800px) {
-    width: 70%;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    font-size: 14px; 
   }
 }
 
 .blogListImgBox {
   width: 30%;
-  @media screen and (min-width: 320px) and (max-width: 800px) {
-    width: 40%;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    margin: 0px;
   }
 }
 
@@ -244,26 +287,25 @@ body {
   height: 100%;
 }
 
-/* Newsletter Styles */
+/* Newsletter */
 .newsletter {
   margin-bottom: 3rem;
 }
 
 .newsHead {
-  color: #000;
-  font-family: "Playfair Display";
-  font-size: 16px;
   background: #f5f5f5;
   padding: 10px;
   border-left: 3pt solid #c4af8c;
+  @media screen and (max-width: 800px) {
+    padding: .3px 5px;
+    font-size: 16px;
+    
+  }
 }
 
 .newsletterInput {
   padding: 15px 10px;
   width: 80%;
-  color: #000;
-  font-family: "Playfair Display";
-  font-size: 16px;
   border: 1pt solid #000;
   border-right: none;
   outline: none;
@@ -274,12 +316,17 @@ body {
   width: 100%;
 }
 
-/* Podcast Styles */
+/* Podcast */
 .podcastBoard {
-  background-color: #000;
+  background: #000;
   padding: 1.43rem;
   display: flex;
   flex-direction: column;
+  @media  screen and (min-width: 320px) and (max-width: 800px) {
+    padding: 1rem;
+    gap: .5rem;
+    
+  }
 }
 
 .podcastBoard h2 {
@@ -294,8 +341,7 @@ body {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
-  @media screen and (min-width: 320px) and (max-width: 800px) {
-    flex-wrap: wrap;
+  @media screen and (max-width: 800px) {
     justify-content: left;
     gap: 0.5rem;
   }
@@ -312,7 +358,9 @@ body {
   border-right: 4pt solid white;
   @media screen and (min-width: 320px) and (max-width: 800px) {
     font-size: 14px;
-    border-right: 1px solid white;
+    border-right: 1pt solid white;
+    padding: .5rem;
+    gap: 1rem;
   }
 }
 
@@ -322,119 +370,61 @@ body {
   padding: 1rem;
   justify-content: flex-end;
   margin-top: 2rem;
+  @media screen and (max-width: 800px) {
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
 
 .podcastBox {
   height: 502px;
   width: 100%;
-  background-image: url("/podcasttt.jpg");
+  background: url("/podcasttt.jpg") no-repeat;
   background-size: contain;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    height: 320px;
+    background-size: cover;
+    
+  }
 }
 
-/* Footer Styles */
+/* Footer */
 footer {
   margin: 3rem 0;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 }
 
 .foot_navs {
   display: flex;
   gap: 2rem;
-  color: #000;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 }
+
 .foot_navs a {
   text-decoration: underline;
   color: #000;
 }
+
 .foot-left {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  place-items: left;
-}
-/* Tablet (577px and up) */
-
-/* Mobile (320px and up) */
-@media screen and (min-width: 320px) and (max-width: 800px) {
-  .foot-left img {
-    width: 150px;
-  }
-  .foot_navs {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .footer {
-    display: flex;
-    flex-direction: column;
-  }
-  .foot-left {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    place-items: center;
-  }
-  .podcastIcons {
-    justify-content: center;
-  }
-  .head img {
-    width: 80px;
-  }
-  .navs {
-    font-size: 1px;
-  }
-  .btn-head {
-    padding: 0.2rem 1rem;
-    font-size: 6pt;
-  }
-
-  .hero .img-box {
-    width: 90vw;
-  }
-  .hero-content {
-    width: 90vw;
-  }
-  .hero {
-    display: flex;
-    flex-direction: column;
-    padding: 0rem;
-    border: none;
-    margin: 0rem 0;
+  @media screen and (max-width: 800px) {
     align-items: center;
   }
-  .hero-content h1 {
-    color: #c4af8c;
-    font-family: "Trajan Pro";
-    font-size: 34px;
-  }
-
-  /* Common Text Styles */
-  .hero-content p,
-  .newsletter p,
-  .blogListDescript p {
-    color: #000;
-    font-family: "Playfair Display";
-    font-size: 14px;
-    font-weight: 400;
-  }
-
-  .hero-content p {
-    line-height: 30px;
-  }
-  .content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    gap: 4rem;
-  }
-  .sect_blog {
-    width: 100%;
-  }
-
-  .sect_otherProds {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+}
+.navs a,
+.blog-nav button {
+  background: #f5f5f5;
+  padding: 0.5rem 1.5rem;
+  font-size: 10pt;
+  text-decoration: none;
+  color: #000;
+  font-family: "Playfair Display";
 }

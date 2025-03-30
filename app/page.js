@@ -37,7 +37,7 @@ export default function Home() {
             alt="Governance and Policy Illustration"
           />
         </figure>
-        <article className="hero-content">
+        <div className="hero-content">
           <h1>UNVEILING THE ART OF GOVERNANCE</h1>
           <p>
             Dive into a dynamic repository of ideas, analysis, and solutions
@@ -51,7 +51,7 @@ export default function Home() {
               GET STARTED
             </button>
           </div>
-        </article>
+        </div>
       </section>
 
       <section id="get-started-section" className="content">
