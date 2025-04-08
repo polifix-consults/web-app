@@ -2,7 +2,16 @@
 import supabase from "./supabase";
 
 export async function fetchArticles() {
-  let { data: Article, error } = await supabase.from("Article").select("*");
+  const limit = 35
+  const from = 0 * limit
+  const to = from + limit - 1
+  console.log(from, to)
+
+  let { data: Article, error } = await supabase
+    .from("Article")
+    .select("*")
+    .range(from, to);
+
   if (error) throw new error();
   return { Article };
 }
