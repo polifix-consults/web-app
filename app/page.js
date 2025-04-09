@@ -17,6 +17,8 @@ export default function Home() {
     Mutate({ subscriber: sub });
   }
   const { Article, isLoading, error } = useArticles();
+
+  !isLoading && console.log(Article.pages);
   // Function to scroll to the "Get Started" section
   const handleGetStartedClick = () => {
     const getStartedSection = document.getElementById("get-started-section");
@@ -24,8 +26,6 @@ export default function Home() {
       getStartedSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
- 
 
   return (
     <main>
@@ -63,7 +63,7 @@ export default function Home() {
           </nav>
           <div className="blogListContainer">
             {!isLoading ? (
-              Article.Article.map((index) => (
+              Article.pages[0].Article.map((index) => (
                 <article className="blogList" key={index.slug}>
                   <Link href={`/blog/${index.slug}`}>
                     <h2>{index.article_title}</h2>
