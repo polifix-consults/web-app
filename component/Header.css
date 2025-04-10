@@ -6,6 +6,35 @@
 
 .navs {
   display: flex;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    display: none;
+    
+  }
+}
+.mobileNav{
+  display: none;
+  @media screen and (min-width: 320px) and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    
+  }
+}
+.mobileNav img{
+  width: 20px;
+  
+}
+.mobileNav a{
+  text-decoration: none;
+  color: black;
+  font-size: 10pt;
+  font-family: "Playfair Display";
+  padding: 0.5rem 1.5rem;
+}
+.mobileLinks{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+
 }
 
 .navs a {
