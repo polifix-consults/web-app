@@ -86,6 +86,96 @@ export default function Home() {
         </div>
 
         <aside className="sect_otherProds">
+          <section className="podcast">
+            <h3 className="newsHead">Podcast</h3>
+            <article>
+              <div className="podcastBoard">
+                <h2>
+                  A DIGITAL REPOSITORY FOR EXPLORING VARIOUS POLICY AND
+                  STATECRAFT ISSUES AND TOPICS
+                </h2>
+                <div className="cta-podBox">
+                  <p>SHARE!</p>
+                  <p>SUBSCRIBE!</p>
+                </div>
+                {/* <div className="podcastIcons">
+                  <a href="https://www.youtube.com/@TheCivicPolicyArchive">
+                    <img src="youtube.svg" alt="Watch on YouTube" />
+                  </a>
+                </div> */}
+                <div className="podcastListBox">
+                  <div className="podcastList">
+                    <div className="podcastImgBox">
+                      <img src="vid-thumbnail.jpg" />
+                    </div>
+                    <div className="podcastContent">
+                      <h2>
+                        Why Projects Fail: The Nexus Between Governmental Fiscal
+                        Innovations and Project Implementation
+                      </h2>
+                      <button className="podcast-btn">
+                        <span>
+                          <img src="youtubeBlack.svg" width="16px" />
+                        </span>{" "}
+                        Watch
+                      </button>
+                    </div>
+                  </div>
+                  <div className="podcastList">
+                    <div className="podcastImgBox">
+                      <img src="vid-thumbnail.jpg" />
+                    </div>
+                    <div className="podcastContent">
+                      <h2>
+                        Why Projects Fail: The Nexus Between Governmental Fiscal
+                        Innovations and Project Implementation
+                      </h2>
+                      <button className="podcast-btn">
+                        <span>
+                          <img src="youtubeBlack.svg" width="16px" />
+                        </span>{" "}
+                        Watch
+                      </button>
+                    </div>
+                  </div>
+                  <div className="podcastList">
+                    <div className="podcastImgBox">
+                      <img src="vid-thumbnail.jpg" />
+                    </div>
+                    <div className="podcastContent">
+                      <h2>
+                        Why Projects Fail: The Nexus Between Governmental Fiscal
+                        Innovations and Project Implementation
+                      </h2>
+                      <button className="podcast-btn">
+                        <span>
+                          <img src="youtubeBlack.svg" width="16px" />
+                        </span>{" "}
+                        Watch
+                      </button>
+                    </div>
+                  </div>
+                  <div className="podcastList">
+                    <div className="podcastImgBox">
+                      <img src="vid-thumbnail.jpg" />
+                    </div>
+                    <div className="podcastContent">
+                      <h2>
+                        Why Projects Fail: The Nexus Between Governmental Fiscal
+                        Innovations and Project Implementation
+                      </h2>
+                      <button className="podcast-btn">
+                        <span>
+                          <img src="youtubeBlack.svg" width="16px" />
+                        </span>{" "}
+                        Watch
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
           <section className="newsletter">
             <h3 className="newsHead">Newsletter</h3>
             <h2>DISPATCH</h2>
@@ -109,33 +199,6 @@ export default function Home() {
                 {sending ? "Sending..." : "Subscribe"}
               </button>
             </form>
-          </section>
-
-          <section className="podcast">
-            <h3 className="newsHead">Podcast</h3>
-            <article>
-              <div className="podcastBox"></div>
-              <div className="podcastBoard">
-                <h2>
-                  A DIGITAL REPOSITORY FOR EXPLORING VARIOUS POLICY AND
-                  STATECRAFT ISSUES AND TOPICS
-                </h2>
-                <div className="cta-podBox">
-                  <p>WATCH!</p>
-                  <p>ENJOY!</p>
-                  <p>SHARE!</p>
-                  <p>SUBSCRIBE!</p>
-                </div>
-                <div className="podcastIcons">
-                  <a href="#">
-                    <img src="spotify.svg" alt="Listen on Spotify" />
-                  </a>
-                  <a href="https://www.youtube.com/@TheCivicPolicyArchive">
-                    <img src="youtube.svg" alt="Watch on YouTube" />
-                  </a>
-                </div>
-              </div>
-            </article>
           </section>
         </aside>
       </section>
