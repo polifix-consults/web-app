@@ -1,6 +1,7 @@
 "use client";
 import BlogNav from "@/component/BlogNav";
 import useArticles from "@/hooks/useArticles";
+import usePodcast from "@/hooks/usePodcast";
 import { useSubscribe } from "@/hooks/useSubscriber";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,9 +11,11 @@ import { Suspense, useState } from "react";
 export default function Home() {
   const [sub, setSub] = useState(" ");
   const { Mutate, isLoading: sending } = useSubscribe();
+  const { podcast, isLoading: podcasting, error: podError } = usePodcast();
 
   function OnSubscribe(e) {
     e.preventDefault();
+    s;
     console.log(sub);
     Mutate({ subscriber: sub });
   }
@@ -103,7 +106,27 @@ export default function Home() {
                     <img src="youtube.svg" alt="Watch on YouTube" />
                   </a>
                 </div> */}
+
                 <div className="podcastListBox">
+                  {isLoading && <h1>Loading</h1>}
+                  {!isLoading &&
+                    podcast.data.map((index) => (
+                      <div key={index.id} className="podcastList">
+                        <div className="podcastImgBox">
+                          <img src={index.thumbnail} />
+                        </div>
+                        <div className="podcastContent">
+                          <h2>{index.vidDescription}</h2>
+                          <a href={index.youTubeLink} className="podcast-btn">
+                            <span>
+                              <img src="youtubeBlack.svg" width="16px" />
+                            </span>{" "}
+                            Watch
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  {/* Placeholder for additional podcast items */}
                   <div className="podcastList">
                     <div className="podcastImgBox">
                       <img src="vid-thumbnail.jpg" />
