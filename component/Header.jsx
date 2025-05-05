@@ -78,25 +78,15 @@ export default function Header() {
             About
           </Link>
           <Link
-            href="/podcast"
-            className={pathname === "/podcast" ? "active" : "notactive"}
-          >
-            The Policy Podcast
-          </Link>
-          <Link
             href="/digest"
             className={pathname === "/digest" ? "active" : "notactive"}
           >
             Policy Digest
           </Link>
+
           <Link
-            href="/articles"
-            className={pathname === "/articles" ? "active" : "notactive"}
-          >
-            Articles
-          </Link>
-          <Link
-            href="/contact"
+            onClick={handleContactClick}
+            href="#contact"
             className={pathname === "/contact" ? "active" : "notactive"}
           >
             Contact
