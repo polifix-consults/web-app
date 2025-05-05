@@ -43,11 +43,9 @@ export default function Home() {
         <div className="hero-content">
           <h1>WELCOME TO POLIFIX</h1>
           <p>
-            Dive into a dynamic repository of ideas, analysis, and solutions
-            shaping the world of policy and statecraft. From historical lessons
-            to modern challenges, explore the strategies, debates, and decisions
-            that define how societies are governed—crafted for thinkers,
-            leaders, and changemakers.
+            Welcome to the official websitw of Polifix, a
+            digital repository for exploring various policy and statecraft
+            issues and topics.
           </p>
           <div>
             <button onClick={handleGetStartedClick} className="btn-hero">
@@ -117,9 +115,7 @@ export default function Home() {
             <h3 className="newsHead">The Polifix Podcast</h3>
             <article>
               <div className="podcastBoard">
-                <h2>
-                 UNVEILING THE ART OF GOVERNANCE AND STATECRAFT
-                </h2>
+                <h2>UNVEILING THE ART OF GOVERNANCE AND STATECRAFT</h2>
                 {/* <div className="cta-podBox">
                   <p>SHARE!</p>
                   <p>SUBSCRIBE!</p>
