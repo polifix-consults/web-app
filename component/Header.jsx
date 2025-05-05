@@ -8,12 +8,18 @@ export default function Header() {
   const pathname = usePathname(); // Get the current route
   const [isMobile, setIsMobile] = useState(false); // State to track mobile view
   console.log(pathname);
+  const handleContactClick = () => {
+    const getStartedSection = document.getElementById("contact-us");
+    if (getStartedSection) {
+      getStartedSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <header className="head">
         <img
           src="/civicLogo.svg"
-          width="100px"
+          width="200px"
           alt="Civic Policy Archive Logo"
         />
         <nav className="navs">
@@ -26,26 +32,16 @@ export default function Header() {
           >
             About
           </Link>
-          <Link
-            href="/podcast"
-            className={pathname === "/podcast" ? "active" : "notactive"}
-          >
-            The Policy Podcast
-          </Link>
+
           <Link
             href="/digest"
-            className={pathname === "/digeest" ? "active" : "notactive"}
+            className={pathname === "/digest" ? "active" : "notactive"}
           >
             Policy Digest
           </Link>
           <Link
-            href="/articles"
-            className={pathname === "/articles" ? "active" : "notactive"}
-          >
-            Articles
-          </Link>
-          <Link
-            href="/contact"
+            href="#contact"
+            onClick={handleContactClick}
             className={pathname === "/contact" ? "active" : "notactive"}
           >
             Contact

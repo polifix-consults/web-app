@@ -1,18 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
-
-@font-face {
-  font-family: "Trajan Pro";
-  src: url("/fonts/TrajanPro-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Trajan Pro";
-  src: url("/fonts/TrajanPro-Bold.woff") format("woff");
-  font-weight: bold;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Base Styles */
 body {
@@ -20,7 +6,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  font-family: "Playfair Display", "Trajan Pro", serif;
+  font-family: "Montserrat", serif;
 }
 
 .container {
@@ -53,10 +39,10 @@ body {
 .filter {
   background: #f5f5f5;
   padding: 0.5rem 1.5rem;
-  font-size: 10pt;
+
   text-decoration: none;
   color: #000;
-  font-family: "Playfair Display";
+  font-family: "Montserrat", serif;
   border: none;
   outline: none;
 }
@@ -76,7 +62,7 @@ body {
 .newsletter button {
   background: #000;
   color: #fff;
-  font-family: "Trajan Pro";
+  font-family: "Montserrat", serif;
   text-transform: uppercase;
 }
 
@@ -156,6 +142,7 @@ body {
   width: 50%;
   padding: 0 3rem;
   display: flex;
+  justify-content: space-around ;
   flex-direction: column;
   @media screen and (min-width: 320px) and (max-width: 800px) {
     display: column;
@@ -169,9 +156,9 @@ body {
 }
 
 .hero-content h1 {
-  color: #c4af8c;
-  font-family: "Trajan Pro";
-  font-size: 40px;
+  color: black;
+  font-family: "Montserrat", serif;
+  font-size: 50px;
   @media screen and (min-width: 320px) and (max-width: 800px) {
     font-size: 28px;
   }
@@ -182,7 +169,7 @@ body {
 .newsletter p,
 .blogListDescript p {
   color: #000;
-  font-family: "Playfair Display";
+  font-family: "Montserrat", serif;
   font-size: 16px;
   font-weight: 400;
   @media screen and (min-width: 320px) and (max-width: 800px) {
@@ -250,7 +237,7 @@ body {
 .blogList h2,
 .newsletter h2 {
   color: #000;
-  font-family: "Trajan Pro";
+  font-family: "Montserrat", serif;
   font-size: 18px;
   @media screen and (max-width: 800px) {
     font-size: 16px;
@@ -276,6 +263,7 @@ body {
 .blogListDescript {
   display: flex;
   justify-content: space-between;
+  font-family: "Montserrat", serif;
   @media screen and (max-width: 800px) {
     flex-direction: column-reverse;
     gap: 1rem;
@@ -292,7 +280,7 @@ body {
 }
 
 .blogListImgBox {
-  width: 30%;
+  height: 200px;
   @media screen and (max-width: 800px) {
     width: 100%;
     margin: 0px;
@@ -312,7 +300,7 @@ body {
 .newsHead {
   background: #f5f5f5;
   padding: 10px;
-  border-left: 3pt solid #c4af8c;
+  border-left: 3pt solid black;
   @media screen and (max-width: 800px) {
     padding: 0.3px 5px;
     font-size: 16px;
@@ -346,7 +334,7 @@ body {
 
 .podcastBoard h2 {
   color: #fff;
-  font-family: "Instrument Sans";
+  font-family: "Montserrat";
   font-size: 17.959px;
   font-weight: 600;
   text-transform: uppercase;
@@ -363,7 +351,7 @@ body {
   border: none;
   font-size: 14px;
   text-decoration: none;
-  font-family: "Instrument Sans";
+  font-family: "Montserrat";
   width: fit-content;
 }
 .podcastImgBox {
@@ -402,10 +390,15 @@ body {
 }
 .podcastContent {
   width: 80%;
+  text-transform: lowercase;
   @media screen and (min-width: 320px) and (max-width: 800px) {
     width: 100%;
     margin: 0px;
   }
+}
+.podcastContent h2{
+  text-transform: capitalize;
+  font-weight: normal;
 }
 .cta-podBox {
   display: flex;
@@ -419,7 +412,7 @@ body {
 
 .cta-podBox p {
   color: #000;
-  font-family: "Instrument Sans";
+  font-family: "Montserrat";
   font-size: 16px;
   font-weight: 600;
   background: #c4af8c;
@@ -435,14 +428,27 @@ body {
 
 .podcastIcons {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  place-items: center;
   justify-content: flex-end;
   margin-top: 2rem;
   @media screen and (max-width: 800px) {
     justify-content: center;
     margin-top: 1rem;
   }
+}
+.podcastIcons a{
+  text-decoration: none;
+  display: flex;
+  place-items: center;
+  gap: .3rem;
+
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .podcastBox {
@@ -498,5 +504,5 @@ footer {
   font-size: 10pt;
   text-decoration: none;
   color: #000;
-  font-family: "Playfair Display";
+  font-family: "Montserrat", serif;
 }

@@ -1,0 +1,11 @@
+.Blog {
+  margin: 2rem;
+}
+
+.Blogs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 90vh;
+  overflow-x: scroll;
+}

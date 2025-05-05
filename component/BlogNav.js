@@ -15,22 +15,22 @@ export default function BlogNav() {
   const sort = searchParams.get("sort"); // Extract the "sort" query param (e.g., "latest")
   return (
     <>
-      <button
+      {/* <button
         onClick={() => {
           handleLatestClick();
         }}
         className={`${sort === "latest" ? "active-filter" : "filter"}`}
       >
         Latest
-      </button>
-      <button
+      </button> */}
+      <h3
         onClick={() => {
           handlePopularClick();
         }}
-        className={`${sort === "popular" ? "active-filter" : "filter"}`}
+        className={`${sort === "popular" ? "active-filter" : "filter"} newsHead`}
       >
-        Popular
-      </button>
+        Popular Stories
+      </h3>
     </>
   );
 }

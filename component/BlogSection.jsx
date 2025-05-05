@@ -44,7 +44,7 @@ const BlogSection = () => {
             <div key={i}>
               {" "}
               <article className="blogList" key={index}>
-                <Link href={`/blog/${post.slug}`}>
+                <Link href={`/digest/${post.slug}`}>
                   <h2>{post.article_title}</h2>
                   <div className="blogListDescript">
                     <p>{post.article_body.slice(0, 250) + "..."}</p>

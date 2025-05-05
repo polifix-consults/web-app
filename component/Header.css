@@ -46,7 +46,7 @@
   font-size: 10pt;
   text-decoration: none;
   color: #000;
-  font-family: "Playfair Display";
+  font-family: "Montserrat";
 }
 .notactive {
   background-color: #f5f5f5;
@@ -63,7 +63,7 @@
 .newsletter button {
   background-color: #000;
   color: #fff;
-  font-family: "Trajan Pro";
+  font-family: "Montserrat";
   text-transform: uppercase;
 }
 
