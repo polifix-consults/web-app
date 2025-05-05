@@ -43,7 +43,7 @@ export default function Home() {
         <div className="hero-content">
           <h1>WELCOME TO POLIFIX</h1>
           <p>
-            Welcome to the official websitw of Polifix, a
+            Welcome to the official website of Polifix, a
             digital repository for exploring various policy and statecraft
             issues and topics.
           </p>
