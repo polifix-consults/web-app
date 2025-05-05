@@ -114,12 +114,11 @@ export default function Home() {
             </form>
           </section>
           <section className="podcast">
-            <h3 className="newsHead">Podcast</h3>
+            <h3 className="newsHead">The Polifix Podcast</h3>
             <article>
               <div className="podcastBoard">
                 <h2>
-                  A DIGITAL REPOSITORY FOR EXPLORING VARIOUS POLICY AND
-                  STATECRAFT ISSUES AND TOPICS
+                 UNVEILING THE ART OF GOVERNANCE AND STATECRAFT
                 </h2>
                 {/* <div className="cta-podBox">
                   <p>SHARE!</p>
