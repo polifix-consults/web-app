@@ -36,16 +36,21 @@ export default function Home() {
         <figure className="img-box">
           <img
             className="img-boxImage"
-            src="pfxH.jpg"
+            src="pfxhero.jpg"
             alt="Governance and Policy Illustration"
           />
         </figure>
         <div className="hero-content">
           <h1>WELCOME TO POLIFIX</h1>
           <p>
-            Welcome to the official website of Polifix, a
-            digital repository for exploring various policy and statecraft
-            issues and topics.
+            At the forefront of innovative and strategic change, we specialize
+            in Policy Consulting and Advisory Services, driving impactful
+            solutions through Research, Data Analytics. Our mission is to
+            provide high-quality policy consulting services that enhance
+            government efficiency, promote good governance, and drive
+            sustainable development. We also foster civic engagement and public
+            policy education to ensure inclusive,open and
+            participatory governance.
           </p>
           <div>
             <button onClick={handleGetStartedClick} className="btn-hero">
@@ -88,8 +93,8 @@ export default function Home() {
 
         <aside className="sect_otherProds">
           <section className="newsletter">
-            <h3 className="newsHead">Newsletter</h3>
-            <h2>DISPATCH</h2>
+            <h3 className="newsHead">The Policy Dispatch</h3>
+            {/* <h2>DISPATCH</h2> */}
             <p>
               Sign up to read exclusive articles and insights on the dispatch
             </p>
@@ -113,9 +118,10 @@ export default function Home() {
           </section>
           <section className="podcast">
             <h3 className="newsHead">The Polifix Podcast</h3>
+            <p>UNVEILING THE ART OF GOVERNANCE AND STATECRAFT</p>
             <article>
               <div className="podcastBoard">
-                <h2>UNVEILING THE ART OF GOVERNANCE AND STATECRAFT</h2>
+             
                 {/* <div className="cta-podBox">
                   <p>SHARE!</p>
                   <p>SUBSCRIBE!</p>
