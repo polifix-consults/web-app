@@ -36,7 +36,7 @@ export default function Home() {
         <figure className="img-box">
           <img
             className="img-boxImage"
-            src="pfxhero.jpg"
+            src={Article?.pages[0]?.Article[0]?.article_img}
             alt="Governance and Policy Illustration"
           />
         </figure>
@@ -121,7 +121,6 @@ export default function Home() {
             <p>UNVEILING THE ART OF GOVERNANCE AND STATECRAFT</p>
             <article>
               <div className="podcastBoard">
-             
                 {/* <div className="cta-podBox">
                   <p>SHARE!</p>
                   <p>SUBSCRIBE!</p>
@@ -156,6 +155,23 @@ export default function Home() {
             </article>
           </section>
         </aside>
+      </section>
+      <section className="sect_sponsor">
+        <h3 className="newsHead">Clients & Partnership</h3>
+        <div className="sponsorBoxContainer">
+          <div className="sponsorBox">
+            <img src="senate.png" />
+            <h2>The Nigerian House of Assembly</h2>
+          </div>
+          <div className="sponsorBox">
+            <img src="hOfRep.png" />
+            <h2>The Nigerian House of Representative</h2>
+          </div>
+          <div className="sponsorBox">
+            <img src="senate.png" />
+            <h2>The Nigerian House of Assembly</h2>
+          </div>
+        </div>
       </section>
     </main>
   );
