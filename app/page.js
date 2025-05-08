@@ -95,9 +95,7 @@ export default function Home() {
           <section className="newsletter">
             <h3 className="newsHead">The Policy Dispatch</h3>
             {/* <h2>DISPATCH</h2> */}
-            <p>
-              Sign up to read exclusive articles and insights on the dispatch
-            </p>
+            <p>Subscribe to our Newsletter: The Policy Dispatch</p>
             <form
               onSubmit={(e) => {
                 OnSubscribe(e);
@@ -160,16 +158,16 @@ export default function Home() {
         <h3 className="newsHead">Clients & Partnership</h3>
         <div className="sponsorBoxContainer">
           <div className="sponsorBox">
-            <img src="senate.png" />
-            <h2>The Nigerian House of Assembly</h2>
+            <img width="200px" className="policyBox" src="pRoundT.png" />
+            <h2>The Policy Round Table</h2>
           </div>
           <div className="sponsorBox">
-            <img src="hOfRep.png" />
-            <h2>The Nigerian House of Representative</h2>
+            <img className="otherImages" width="90px" src="hOfRep.png" />
+            <h2>The Nigerian Senate</h2>
           </div>
           <div className="sponsorBox">
-            <img src="senate.png" />
-            <h2>The Nigerian House of Assembly</h2>
+            <img className="otherImages" width="90px" src="senate.png" />
+            <h2>The Nigerian Federal House of Representative</h2>
           </div>
         </div>
       </section>
