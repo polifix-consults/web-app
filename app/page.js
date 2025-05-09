@@ -163,11 +163,11 @@ export default function Home() {
           </div>
           <div className="sponsorBox">
             <img className="otherImages" width="90px" src="hOfRep.png" />
-            <h2>The Nigerian Senate</h2>
+            <h2>The Nigerian House of Representative</h2>
           </div>
           <div className="sponsorBox">
             <img className="otherImages" width="90px" src="senate.png" />
-            <h2>The Nigerian Federal House of Representative</h2>
+            <h2>The Nigerian Senate</h2>
           </div>
         </div>
       </section>

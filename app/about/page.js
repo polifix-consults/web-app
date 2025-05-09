@@ -5,10 +5,9 @@ export default function page() {
   return (
     <section>
       <div className="AboutUsContainer">
-
         <div>
           <h2>ABOUT US</h2>
-          <p3>
+          <p>
             PoliFIX Consults is a forward thinking policy consulting firm
             specializing in strategic advisory services for governments, public
             and private institutions, and development partners. With proven
@@ -23,7 +22,7 @@ export default function page() {
             processes. Through thought leadership, capacity-building
             initiatives, and strategic partnerships, PoliFIX is shaping the
             future of governance worldwide
-          </p3>
+          </p>
 
           <h3>VISION</h3>
           <p>
@@ -83,6 +82,25 @@ export default function page() {
               </p>
             </li>
           </ul>
+
+          <h3>TEAM LEAD</h3>
+          <div className="teamLead">
+            <img src="/teamlead.jpg" alt="Team Lead" />
+            <div className="teamText">
+              <h3>OLUBUNMI AYANTUNJI</h3>
+              <p>
+                Olubunmi Ayantunji is a Legal Practitioner, Policy Expert, and
+                Government Relations Advisor. He holds a Master’s degree in
+                Legislative Studies and Policy from the University of Benin
+                Nigeria and a Master of Public Administration (MPA) from the
+                Johnson Shoyama Graduate School of Public Policy(University of
+                Regina). He has has served on the board of the Institute of
+                Public Administratuon of Canada (IPAC) and has almost a decade
+                of experience in the Public service in Nigeria,Ghana and the
+                Provincial Government of Saskatchewan in Canada.
+              </p>
+            </div>
+          </div>
           <h3>CONCLUSION</h3>
           <p>
             PoliFIX is poised to support governments and public institutions in

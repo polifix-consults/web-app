@@ -16,3 +16,28 @@
 h2 {
   font-size: 32px;
 }
+
+.teamLead {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: start;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f9f8f8;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+  }
+}
+.teamText {
+  @media screen and (max-width: 800px) {
+    text-align: center;
+  }
+}
+p,ul{
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
+  }
+}
