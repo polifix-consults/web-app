@@ -21,7 +21,7 @@ export default function Home() {
   }
   const { Article, isLoading, error } = useArticles();
 
-  !isLoading && console.log(Article.pages);
+  !isLoading && console.log(Article?.pages);
   // Function to scroll to the "Get Started" section
   const handleGetStartedClick = () => {
     const getStartedSection = document.getElementById("get-started-section");

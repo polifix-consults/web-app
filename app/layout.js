@@ -5,6 +5,7 @@ import "./globals.css";
 
 import Header from "@/component/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        <title>Polifix Consults</title>
+        <meta name="description" content="Polifix Logo" />
+        <link rel="icon" href="/vercel.svg" />
+      </head>
       <body>
         <QueryClientProvider client={queryClient}>
           <div className="container">
@@ -55,16 +61,20 @@ export default function RootLayout({ children }) {
               <div id="contact-us" className="podcastIcons">
                 <h3>CONTACT US </h3>
                 <a href="https://www.youtube.com/@TheCivicPolicyArchive">
-                  <img src="/youtubeBlack.svg" alt="YouTube" />
+                  <img width='24px' src="/youtubeBlack.svg" alt="YouTube" />
                   @SENDPOLIFIX
                 </a>
                 <a href="https://www.instagram.com/sendpolifix?igsh=MW9mcWowaWY4Njd4dw%3D%3D&utm_source=qr">
-                  <img src="/instagramBlack.svg" alt="Instagram" />
+                  <img width='24px' src="/instagramBlack.svg" alt="Instagram" />
                   @SENDPOLIFIX
                 </a>
                 <a href="https://x.com/sendpolifix?s=11">
-                  <img src="/twitterBlack.svg" alt="Twitter" />
+                  <img width='24px' src="/twitterBlack.svg" alt="Twitter" />
                   @SENDPOLIFIX
+                </a>
+                <a href="">
+                  <img width='24px' src="/mail.svg" alt="Mail" />
+                  admin@polifixconsults.com
                 </a>
               </div>
             </footer>
