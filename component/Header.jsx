@@ -20,7 +20,7 @@ export default function Header() {
         <img
           src="/civicLogo.svg"
           width="200px"
-          alt="Civic Policy Archive Logo"
+          alt="Polifix"
         />
         <nav className="navs">
           <Link href="/" className={pathname === "/" ? "active" : "notactive"}>
@@ -53,7 +53,7 @@ export default function Header() {
               onClick={() => setIsMobile(true)}
               src="/hamburger.svg"
               height="30px"
-              alt="Civic Policy Archive Logo"
+              alt="Polifix"
             />
           )}
           {isMobile && (
@@ -61,7 +61,7 @@ export default function Header() {
               onClick={() => setIsMobile(false)}
               src="/cross.svg"
               height="30px"
-              alt="Civic Policy Archive Logo"
+              alt="PoliFix"
             />
           )}
         </nav>

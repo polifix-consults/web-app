@@ -86,7 +86,7 @@ export default function RootLayout({ children }) {
                 <img
                   src="/civicLogo.svg"
                   width="200px"
-                  alt="Civic Policy Archive Logo"
+                  alt="Polifix"
                 />
                 <nav className="foot_navs">
                   <a href="#">About Us</a>
