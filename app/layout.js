@@ -34,8 +34,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>Polifix Consults</title>
         <meta name="description" content="Polifix Logo" />
+        <meta name="google-site-verification" content="j5W3OlHrfhQimQnlwsl89etr58MJd_u8s3rgrpJ5Sg8" />
+        <title>
+          PoliFIX Consults | Policy Consulting for Sustainable Governance
+        </title>
+        <meta
+          name="description"
+          content="PoliFIX provides expert policy consulting and advisory services, driving sustainable development through research and data analytics. Explore our insights on governance, civic engagement, and digital reform."
+        />
         <link rel="icon" href="/vercel.svg" />
       </head>
       <body>
@@ -61,19 +68,19 @@ export default function RootLayout({ children }) {
               <div id="contact-us" className="podcastIcons">
                 <h3>CONTACT US </h3>
                 <a href="https://www.youtube.com/@TheCivicPolicyArchive">
-                  <img width='24px' src="/youtubeBlack.svg" alt="YouTube" />
+                  <img width="24px" src="/youtubeBlack.svg" alt="YouTube" />
                   @SENDPOLIFIX
                 </a>
                 <a href="https://www.instagram.com/sendpolifix?igsh=MW9mcWowaWY4Njd4dw%3D%3D&utm_source=qr">
-                  <img width='24px' src="/instagramBlack.svg" alt="Instagram" />
+                  <img width="24px" src="/instagramBlack.svg" alt="Instagram" />
                   @SENDPOLIFIX
                 </a>
                 <a href="https://x.com/sendpolifix?s=11">
-                  <img width='24px' src="/twitterBlack.svg" alt="Twitter" />
+                  <img width="24px" src="/twitterBlack.svg" alt="Twitter" />
                   @SENDPOLIFIX
                 </a>
                 <a href="">
-                  <img width='24px' src="/mail.svg" alt="Mail" />
+                  <img width="24px" src="/mail.svg" alt="Mail" />
                   admin@polifixconsults.com
                 </a>
               </div>
