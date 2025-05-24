@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
           content="https://polifixconsults.com/og-image.jpg"
         />
         <link rel="canonical" href="https://polifixconsults.com" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/polifix.png" />
       </Head>
       <body>
         <QueryClientProvider client={queryClient}>
