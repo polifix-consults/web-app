@@ -33,9 +33,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <head>
-        <meta name="description" content="Polifix Logo" />
-        <meta name="google-site-verification" content="j5W3OlHrfhQimQnlwsl89etr58MJd_u8s3rgrpJ5Sg8" />
+      <Head>
         <title>
           PoliFIX Consults | Policy Consulting for Sustainable Governance
         </title>
@@ -43,8 +41,41 @@ export default function RootLayout({ children }) {
           name="description"
           content="PoliFIX provides expert policy consulting and advisory services, driving sustainable development through research and data analytics. Explore our insights on governance, civic engagement, and digital reform."
         />
-        <link rel="icon" href="/vercel.svg" />
-      </head>
+        <meta
+          name="google-site-verification"
+          content="j5W3OlHrfhQimQnlwsl89etr58MJd_u8s3rgrpJ5Sg8"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta
+          property="og:title"
+          content="PoliFIX Consults | Policy Consulting for Sustainable Governance"
+        />
+        <meta
+          property="og:description"
+          content="PoliFIX provides expert policy consulting and advisory services, driving sustainable development through research and data analytics."
+        />
+        <meta
+          property="og:image"
+          content="https://polifixconsults.com/og-image.jpg"
+        />
+        <meta property="og:url" content="https://polifixconsults.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="PoliFIX Consults | Policy Consulting for Sustainable Governance"
+        />
+        <meta
+          name="twitter:description"
+          content="PoliFIX provides expert policy consulting and advisory services, driving sustainable development through research and data analytics."
+        />
+        <meta
+          name="twitter:image"
+          content="https://polifixconsults.com/og-image.jpg"
+        />
+        <link rel="canonical" href="https://polifixconsults.com" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body>
         <QueryClientProvider client={queryClient}>
           <div className="container">
