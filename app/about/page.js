@@ -85,7 +85,7 @@ export default function page() {
 
           <h3>TEAM LEAD</h3>
           <div className="teamLead">
-            <img src="teamlead.jpg" alt="Team Lead" />
+            <img src="teamLead.jpg" alt="Team Lead" />
             <div className="teamText">
               <h3>OLUBUNMI AYANTUNJI</h3>
               <p>
