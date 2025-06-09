@@ -101,6 +101,23 @@ export default function page() {
               </p>
             </div>
           </div>
+             <div className="teamLead">
+            <img src="teamLead.jpg" alt="Team Lead" />
+            <div className="teamText">
+              <h3>OLUBUNMI AYANTUNJI</h3>
+              <p>
+                Olubunmi Ayantunji is a Legal Practitioner, Policy Expert, and
+                Government Relations Advisor. He holds a Master’s degree in
+                Legislative Studies and Policy from the University of Benin
+                Nigeria and a Master of Public Administration (MPA) from the
+                Johnson Shoyama Graduate School of Public Policy(University of
+                Regina). He has has served on the board of the Institute of
+                Public Administratuon of Canada (IPAC) and has almost a decade
+                of experience in the Public service in Nigeria,Ghana and the
+                Provincial Government of Saskatchewan in Canada.
+              </p>
+            </div>
+          </div>
           <h3>CONCLUSION</h3>
           <p>
             PoliFIX is poised to support governments and public institutions in

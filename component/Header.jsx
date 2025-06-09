@@ -40,8 +40,8 @@ export default function Header() {
             Policy Digest
           </Link>
           <Link
-            href="#contact"
-            onClick={handleContactClick}
+            href="/contact"
+            
             className={pathname === "/contact" ? "active" : "notactive"}
           >
             Contact
