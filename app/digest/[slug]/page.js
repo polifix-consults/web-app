@@ -4,7 +4,6 @@ import "./page.css";
 import { useSearchParams } from "next/navigation";
 import useCurrentArticles from "@/hooks/useCurrentArticls";
 import { ArticleRenderer } from "@/component/ArticleRenderer";
-import { urlFor } from "@/sanity/lib/image";
 
 export default function Page() {
   const { data, isLoading, error: dataError } = useCurrentArticles();
