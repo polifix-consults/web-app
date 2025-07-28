@@ -1,5 +1,6 @@
 "use client";
 import BlogNav from "@/component/BlogNav";
+import BlogSection from "@/component/BlogSection";
 import useArticles from "@/hooks/useArticles";
 import usePodcast from "@/hooks/usePodcast";
 import { useSubscribe } from "@/hooks/useSubscriber";
@@ -19,9 +20,11 @@ export default function Home() {
     console.log(sub);
     Mutate({ subscriber: sub });
   }
-  const { Article, isLoading, error } = useArticles();
+  const { data: Article, isLoading, error } = useArticles();
 
-  !isLoading && console.log(Article?.pages);
+  if (!isLoading) console.log(Article);
+
+  !isLoading && console.log(Article);
   // Function to scroll to the "Get Started" section
   const handleGetStartedClick = () => {
     const getStartedSection = document.getElementById("get-started-section");
@@ -36,7 +39,7 @@ export default function Home() {
         <figure className="img-box">
           <img
             className="img-boxImage"
-            src={Article?.pages[0]?.Article[0]?.article_img}
+            src={Article?.pages[0].articles[0].mainImage?.asset?.url}
             alt="Governance and Policy Illustration"
           />
         </figure>
@@ -67,7 +70,7 @@ export default function Home() {
               <BlogNav />
             </Suspense>
           </nav>
-          <div className="blogListContainer">
+          {/* <div className="blogListContainer">
             {!isLoading ? (
               Article.pages[0].Article.map((index) => (
                 <article className="blogList" key={index.slug}>
@@ -88,7 +91,8 @@ export default function Home() {
             ) : (
               <div>Loading...</div>
             )}
-          </div>
+          </div> */}
+          <BlogSection />
         </div>
 
         <aside className="sect_otherProds">

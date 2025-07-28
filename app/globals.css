@@ -543,3 +543,12 @@ footer {
     gap: 2rem;
   }
 }
+
+.portable-text p {
+  font-family: "Montserrat", serif;
+}
+
+/* Optionally style headings or other blocks */
+.portable-text h1, .portable-text h2 {
+  font-family: "Montserrat", serif;
+}

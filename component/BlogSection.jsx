@@ -6,13 +6,15 @@ import Link from "next/link";
 
 const BlogSection = () => {
   const {
-    Article,
+    data,
     isLoading,
     error,
     fetchNextPage,
     hasNextPage,
     isFetchingNextPage,
   } = useArticles();
+
+  if (!isLoading) console.log(data);
 
   const loadMoreRef = useRef(null);
 
@@ -34,22 +36,24 @@ const BlogSection = () => {
   }, [loadMoreRef, hasNextPage, isFetchingNextPage]);
 
   if (isLoading) return <div>Loading...</div>;
-  console.log(Article);
+  if (error) return <div>Error loading articles</div>;
 
   return (
     <>
-      {Article?.pages.map((page, index) => (
+      {data?.pages.map((page, index) => (
         <div key={index}>
-          {page.Article.map((post, i) => (
+          {page.articles.map((post, i) => (
             <div key={i}>
-              {" "}
-              <article className="blogList" key={index}>
-                <Link href={`/digest/${post.slug}`}>
-                  <h2>{post.article_title}</h2>
+              <article className="blogList">
+                <Link href={`/digest/${post.slug.current}`}>
+                  <h2>{post.title}</h2>
                   <div className="blogListDescript">
-                    <p>{post.article_body.slice(0, 250) + "..."}</p>
+                    <p>{post.description}</p>
                     <figure className="blogListImgBox">
-                      <img src={post.article_img} alt={post.imageAlt} />
+                      <img
+                        src={post.mainImage?.asset?.url}
+                        alt={post.imageAlt}
+                      />
                     </figure>
                   </div>
                 </Link>
@@ -62,10 +66,9 @@ const BlogSection = () => {
         {isFetchingNextPage
           ? "Loading more..."
           : hasNextPage
-          ? "Load more"
-          : "No more data"}
+            ? "Load more"
+            : "No more data"}
       </div>
-     
     </>
   );
 };

@@ -1,29 +1,25 @@
 "use client";
-import { fetchArticles } from "@/services/fetchArticle";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { client } from "@/sanity/lib/client";
+import { useInfiniteQuery } from "@tanstack/react-query";
 
-export default function useArticles() {
-  const {
-    data: Article,
-    isLoading,
-    error,
-    fetchNextPage,
-    hasNextPage,
-    isFetchNextPage,
-  } = useInfiniteQuery({
-    queryKey: ["Articles"],
-    queryFn: () => fetchArticles(),
-    getNextPageParam: (lastPage) => {
-      return lastPage.isLastPage ? undefined : lastPage.nextPage;
-    },
-  });
-
+const fetchArticles = async ({ pageParam = 0 }) => {
+  const query = `*[_type == "post"] | order(_createdAt desc) [${pageParam}...${pageParam + 10}] {
+    title, slug, body, mainImage{ asset->{ _id, url } }, publishedAt,description 
+  }`;
+  const data = await client.fetch(query); // Use client instead of sanityClient
+  console.log(data);
   return {
-    Article,
-    isLoading,
-    error,
-    fetchNextPage,
-    hasNextPage,
-    isFetchNextPage,
+    articles: data,
+    nextPage: data.length === 10 ? pageParam + 10 : undefined,
   };
-}
+};
+
+const useArticles = () => {
+  return useInfiniteQuery({
+    queryKey: ["articles"],
+    queryFn: fetchArticles,
+    getNextPageParam: (lastPage) => lastPage.nextPage,
+  });
+};
+
+export default useArticles;

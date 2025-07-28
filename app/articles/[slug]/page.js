@@ -2,63 +2,40 @@
 import React from "react";
 import "./page.css";
 import { useParams } from "next/navigation";
-import useArticles from "@/hooks/useArticles";
-import BlogSect, { ArticleRenderer } from "@/component/ArticleRenderer";
+import sanityClient from "@/sanityClient";
+import { ArticleRenderer } from "@/component/ArticleRenderer";
 
-export default function Page() {
-  const { Article, isLoading, error } = useArticles();
+export default async function Page() {
   const params = useParams();
 
+  const query = `*[_type == "post" && slug.current == $slug][0]{
+    title,
+    article_Body,
+    created_at
+  }`;
+  const currentPost = await sanityClient.fetch(query, { slug: params.slug });
+
+  if (!currentPost) return <div>Post not found</div>;
+
   function formatCreatedAt(createdAtString) {
-    // Check if the input is valid
-    if (!createdAtString || typeof createdAtString !== "string") {
-      return "Invalid date";
-    }
-
-    // Parse the string into a Date object
+    if (!createdAtString || typeof createdAtString !== "string") return "Invalid date";
     const date = new Date(createdAtString);
-
-    // Check if the Date object is valid
-    if (isNaN(date.getTime())) {
-      return "Invalid date";
-    }
-
-    // Format the date and time
-    const formattedDate = date.toLocaleString("en-US", {
-      month: "short", // "Mar"
-      day: "2-digit", // "28"
-      year: "numeric", // "2025"
-      hour: "2-digit", // "18"
-      minute: "2-digit", // "29"
-      second: "2-digit", // "00"
-      hour12: false, // 24-hour format
+    if (isNaN(date.getTime())) return "Invalid date";
+    return date.toLocaleString("en-US", {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
     });
-
-    return formattedDate;
   }
 
-  // Example usage
-  const createdAt = "2025-03-28T18:29:00Z"; // Typical Supabase created_at format
-  console.log(formatCreatedAt(createdAt)); // "Mar 28, 2025, 18:29:00"
-
-  // Test with invalid input
-  console.log(formatCreatedAt("")); // "Invalid date"
-  console.log(formatCreatedAt("not-a-date")); // "Invalid date"
-
-  if (isLoading) return <div>Loading...</div>;
-  console.log(Article.pages);
-  const currentPost = Article?.pages[0]?.Article?.find(
-    (post) => post.slug === params.slug
-  );
-  console.log(currentPost);
-  console.log(params.slug);
-
-  const timecreated = formatCreatedAt(currentPost?.created_at);
-  console.log(currentPost.article_Body);
+  const timecreated = formatCreatedAt(currentPost.created_at);
 
   return (
     <div className="blogDetails">
-      {" "}
       <ArticleRenderer article={currentPost.article_Body} />
       <i>-Published on {timecreated}</i>
     </div>
