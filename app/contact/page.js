@@ -37,7 +37,7 @@ export default function page() {
             forecasting, financial modeling, and lean growth strategies. He also
             owns and operates a successful real estate portfolio, giving him a
             hands-on understanding of investment and long-term value creation.
-            Whether it's building a financial roadmap or helping founders make
+            Whether its building a financial roadmap or helping founders make
             smart, sustainable decisions—Brayden is all about turning
             numbers into action.
           </p>
