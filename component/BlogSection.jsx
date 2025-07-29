@@ -14,7 +14,7 @@ const BlogSection = () => {
     isFetchingNextPage,
   } = useArticles();
 
-  if (!isLoading) console.log(data);
+ 
 
   const loadMoreRef = useRef(null);
 

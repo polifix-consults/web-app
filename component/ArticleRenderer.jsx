@@ -6,8 +6,7 @@ export const ArticleRenderer = ({ article }) => {
   const postImageUrl = article.mainImage
     ? urlFor(article.mainImage?.asset?._ref)?.width(1500).height(810).url()
     : null;
-  console.log(postImageUrl);
-  console.log(article.mainImage?.asset?._ref);
+ 
 
   if (!article || !article.body) return null;
 

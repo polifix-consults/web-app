@@ -201,7 +201,7 @@ body {
 }
 
 .sect_blog {
-  width: 50%;
+  width: 100%;
   @media screen and (max-width: 800px) {
     width: 100%;
   }
@@ -510,9 +510,13 @@ footer {
   margin-top: 9.2rem;
 }
 .sponsorBox {
-  display: column;
-  gap: 2rem;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 800px) {
+    align-items: center;
+  }
 }
 .otherImages {
   width: 94.2px;
@@ -549,6 +553,7 @@ footer {
 }
 
 /* Optionally style headings or other blocks */
-.portable-text h1, .portable-text h2 {
+.portable-text h1,
+.portable-text h2 {
   font-family: "Montserrat", serif;
 }
