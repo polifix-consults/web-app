@@ -557,3 +557,9 @@ footer {
 .portable-text h2 {
   font-family: "Montserrat", serif;
 }
+.blogListContainer {
+  width: 50%;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+}
