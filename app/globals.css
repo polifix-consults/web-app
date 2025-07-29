@@ -558,8 +558,5 @@ footer {
   font-family: "Montserrat", serif;
 }
 .blogListContainer {
-  width: 50%;
-  @media screen and (max-width: 800px) {
-    width: 90vw;
-  }
+  width: 100%;
 }
