@@ -92,7 +92,9 @@ export default function Home() {
               <div>Loading...</div>
             )}
           </div> */}
-          <BlogSection />
+          <div className="blogListContainer">
+            <BlogSection />
+          </div>
         </div>
 
         <aside className="sect_otherProds">
