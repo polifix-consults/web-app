@@ -8,6 +8,7 @@ export const ArticleRenderer = ({ article }) => {
     : null;
 
   console.log(article.mainImage?.asset?._ref);
+  console.log(postImageUrl);
   if (!article || !article.body) return null;
 
   const { title, body } = article;
