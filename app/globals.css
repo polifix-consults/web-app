@@ -201,7 +201,7 @@ body {
 }
 
 .sect_blog {
-  width: 80%;
+  width: 50%;
   @media screen and (max-width: 800px) {
     width: 100%;
   }
