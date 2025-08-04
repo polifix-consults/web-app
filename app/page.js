@@ -1,6 +1,7 @@
 "use client";
 import BlogNav from "@/component/BlogNav";
 import BlogSection from "@/component/BlogSection";
+import Newsletter from "@/component/Newsletter";
 import useArticles from "@/hooks/useArticles";
 import usePodcast from "@/hooks/usePodcast";
 import { useSubscribe } from "@/hooks/useSubscriber";
@@ -16,7 +17,6 @@ export default function Home() {
 
   function OnSubscribe(e) {
     e.preventDefault();
-    s;
     console.log(sub);
     Mutate({ subscriber: sub });
   }
@@ -102,23 +102,7 @@ export default function Home() {
             <h3 className="newsHead">The Policy Dispatch</h3>
             {/* <h2>DISPATCH</h2> */}
             <p>Subscribe to our Newsletter: The Policy Dispatch</p>
-            <form
-              onSubmit={(e) => {
-                OnSubscribe(e);
-              }}
-            >
-              <input
-                className="newsletterInput"
-                type="email"
-                placeholder="Email address"
-                aria-label="Email address"
-                value={sub}
-                onChange={(e) => setSub(e.target.value)}
-              />
-              <button className="btn-newsletter" type="submit">
-                {sending ? "Sending..." : "Subscribe"}
-              </button>
-            </form>
+            <Newsletter />
           </section>
           <section className="podcast">
             <h3 className="newsHead">The Polifix Podcast</h3>
