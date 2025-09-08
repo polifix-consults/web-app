@@ -39,7 +39,7 @@ export default function Home() {
         <figure className="img-box">
           <img
             className="img-boxImage"
-            src={Article?.pages[0].articles[0].mainImage?.asset?.url}
+            src="heroP.webp"
             alt="Governance and Policy Illustration"
           />
         </figure>
@@ -99,7 +99,7 @@ export default function Home() {
 
         <aside className="sect_otherProds">
           <section className="newsletter">
-            <h3 className="newsHead">The Policy Dispatch</h3>
+            <h3 className="newsHead">The Side Walk Parliament</h3>
             {/* <h2>DISPATCH</h2> */}
             <p>Subscribe to our Newsletter: The Policy Dispatch</p>
             <Newsletter />
