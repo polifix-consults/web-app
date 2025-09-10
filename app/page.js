@@ -101,7 +101,7 @@ export default function Home() {
           <section className="newsletter">
             <h3 className="newsHead">The Side Walk Parliament</h3>
             {/* <h2>DISPATCH</h2> */}
-            <p>Subscribe to our Newsletter: The Policy Dispatch</p>
+            <p>Subscribe to our Newsletter</p>
             <Newsletter />
           </section>
           <section className="podcast">
