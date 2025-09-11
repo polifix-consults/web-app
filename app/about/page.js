@@ -123,6 +123,30 @@ export default function page() {
               </p>
             </div>
           </div>
+          <div className="teamLead">
+            <img src="UMMI.jpg" alt="Team Lead" />
+
+            <div className="teamText">
+              <h3>UMMI-KHULSUM JIBREEL</h3>
+              <p>
+                Ummi-Khulsum Jibreel is a passionate Communication Strategist
+                with a background in media, development, information literacy,
+                and strategic brand consulting. She is a Communication
+                Strategist at PoliFIX Inc. She is also leading communications at
+                V4C (Volunteers4Cause) Abuja Chapter, volunteering as a Social
+                Media Manager for TEDxMaitama, served as a Librarian at the
+                Centre for Democracy and Development (CDD) and has interned with
+                Daar Communications PLC. Skilled in strategic communication,
+                media/public relations, brand consulting, creative storytelling,
+                brand consulting and copywriting, she thrives at building
+                meaningful connections and shaping narratives that inspire
+                action. A Library and Information Science graduate from Ahmadu
+                Bello University, Zaria, and an alumna of Enactus ABU,
+                Ummi-Khulsum is driven by the belief that effective
+                communication can create positive change in the world.
+              </p>
+            </div>
+          </div>
           <h3>CONCLUSION</h3>
           <p>
             PoliFIX is poised to support governments and public institutions in
