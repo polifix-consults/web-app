@@ -39,7 +39,7 @@ export default function Home() {
         <figure className="img-box">
           <img
             className="img-boxImage"
-            src="heroP.webp"
+            src="heropp.webp"
             alt="Governance and Policy Illustration"
           />
         </figure>
