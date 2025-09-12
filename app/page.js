@@ -99,9 +99,9 @@ export default function Home() {
 
         <aside className="sect_otherProds">
           <section className="newsletter">
-            <h3 className="newsHead">The Side Walk Parliament</h3>
+            <h3 className="newsHead">PoliFix Newsletter</h3>
             {/* <h2>DISPATCH</h2> */}
-            <p>Subscribe to our Newsletter</p>
+            <p>Subscribe to our Newsletter: Side Walk Parliament</p>
             <Newsletter />
           </section>
           <section className="podcast">

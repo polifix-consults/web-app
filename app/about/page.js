@@ -124,7 +124,7 @@ export default function page() {
             </div>
           </div>
           <div className="teamLead">
-            <img src="UMMI.jpg" alt="Team Lead" />
+            <img src="ummi.jpg" alt="Team Lead" />
 
             <div className="teamText">
               <h3>UMMI-KHULSUM JIBREEL</h3>
