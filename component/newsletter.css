@@ -1,0 +1,109 @@
+/* newsletter.css */
+
+/* Container */
+.newsletter-container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: Arial, sans-serif;
+}
+
+/* Subscription Form */
+.newsletter-form {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.newsletter-btn {
+  padding: 0.5rem 1rem;
+  background-color: #2563eb; /* blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #1e40af; /* darker blue */
+}
+
+/* Messages */
+.text-green-600 {
+  color: #16a34a;
+}
+
+.text-red-600 {
+  color: #dc2626;
+}
+
+/* Newsletter List */
+.newsletter-list h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Grid */
+.newsletter-list .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .newsletter-list .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card */
+.newsletter-list a {
+  display: block;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease;
+}
+
+.newsletter-list a:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.newsletter-list img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.newsletter-list div {
+  padding: 1rem;
+}
+
+.newsletter-list h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-list p {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-list .text-blue-600 {
+  color: #2563eb;
+}
