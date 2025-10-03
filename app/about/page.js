@@ -127,7 +127,7 @@ export default function page() {
             <img src="communication.webp" alt="Team Lead" />
 
             <div className="teamText">
-              <h3>UMMI-KHULSUM JIBREEL</h3>
+              <h3>UMMI-KHULSUM JIBREEL(COMMUNICATION STRATEGIST)</h3>
               <p>
                 Ummi-Khulsum Jibreel is a passionate Communication Strategist
                 with a background in media, development, information literacy,
