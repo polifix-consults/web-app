@@ -8,7 +8,7 @@ export default function page() {
       <div className="teamLead">
         <img src="teamLead.jpg" alt="Team Lead" />
         <div className="teamText">
-          <h3>OLUBUNMI AYANTUNJI(TEAM LEAD)</h3>
+          <h3>OLUBUNMI AYANTUNJI(MANAGING PARTNER)</h3>
           <p>
             Olubunmi Ayantunji is a Legal Practitioner, Policy Expert, and
             Government Relations Advisor. He holds a Master’s degree in
@@ -19,6 +19,26 @@ export default function page() {
             Canada (IPAC) and has almost a decade of experience in the Public
             service in Nigeria,Ghana and the Provincial Government of
             Saskatchewan in Canada.
+          </p>
+        </div>
+      </div>
+      <div className="teamLead">
+        <img src="OLADEHINDE.webp" alt="Team Lead" />
+        <div className="teamText">
+          <h3>JOSEPH OLADEHINDE(MANAGING PARTNER)</h3>
+          <p>
+            Joseph Oladehinde is a seasoned Human Resources professional with
+            over a decade of diverse experience across various HR functions. He
+            is committed to continuous professional growth and actively stays
+            informed on emerging industry trends and best practices. Currently,
+            Joseph serves as an HR Consultant, leading special projects with the
+            City of Regina. He holds a Bachelor’s degree in Human Resource
+            Management from Lagos State University and a Master’s degree in
+            Human Resource Management from the University of Regina. In
+            addition, he is an Associate of the Chartered Institute of Personnel
+            Management (Nigeria), a Certified Talent Management Practitioner
+            (Canada), and holds a Labour Relations Certificate from Ryerson
+            University, Toronto.
           </p>
         </div>
       </div>
@@ -47,7 +67,7 @@ export default function page() {
         <img src="communication.webp" alt="Team Lead" />
 
         <div className="teamText">
-          <h3>UMMI-KHULSUM JIBREEL</h3>
+          <h3>UMMI-KHULSUM JIBREEL(COMMUNICATION STRATEGIST)</h3>
           <p>
             Ummi-Khulsum Jibreel is a passionate Communication Strategist with a
             background in media, development, information literacy, and
