@@ -428,7 +428,7 @@ body {
 
 .podcastIcons {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   gap: 1rem;
   padding: 1rem;
   place-items: center;
@@ -436,6 +436,8 @@ body {
   margin-top: 2rem;
   @media screen and (max-width: 800px) {
     justify-content: center;
+    display: flex;
+    flex-direction: column;
     margin-top: 1rem;
   }
 }
@@ -444,6 +446,12 @@ body {
   display: flex;
   place-items: center;
   gap: 0.3rem;
+}
+.podcastIcons h3{
+  display: none;
+   @media screen and (max-width: 800px) {
+    display: block;
+  }
 }
 a {
   text-decoration: none;
@@ -469,9 +477,11 @@ a {
 footer {
   margin: 3rem 0;
   display: flex;
+  gap: 3rem;
   justify-content: space-between;
   @media screen and (max-width: 800px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
+
   }
 }
 
@@ -480,6 +490,7 @@ footer {
   gap: 2rem;
   @media screen and (max-width: 800px) {
     flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
@@ -559,4 +570,8 @@ footer {
 }
 .blogListContainer {
   width: 100%;
+}
+.copyright{
+  margin: 0 auto;
+  text-align:  center;
 }

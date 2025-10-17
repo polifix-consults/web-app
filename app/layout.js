@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/component/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Head from "next/head";
+import { FacebookIcon, LucideLinkedin, MailIcon } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,24 +84,19 @@ export default function RootLayout({ children }) {
             {children}
             <footer className="footer">
               <div className="foot-left">
-                <img
-                  src="/civicLogo.svg"
-                  width="200px"
-                  alt="Polifix"
-                />
+                <img src="/civicLogo.svg" width="200px" alt="Polifix" />
                 <nav className="foot_navs">
                   <a href="#">About Us</a>
                   <a href="#">Blog</a>
                   <a href="#">Press Release</a>
                   <a href="#">Contact Us</a>
                 </nav>
-                <p>PoliFIX &copy; 2025</p>
               </div>
               <div id="contact-us" className="podcastIcons">
-                <h3>CONTACT US </h3>
+                <h3>Contact Us</h3>
                 <a href="https://www.youtube.com/@TheCivicPolicyArchive">
                   <img width="24px" src="/youtubeBlack.svg" alt="YouTube" />
-                  @SENDPOLIFIX
+                  @Polifix Podcast
                 </a>
                 <a href="https://www.instagram.com/sendpolifix?igsh=MW9mcWowaWY4Njd4dw%3D%3D&utm_source=qr">
                   <img width="24px" src="/instagramBlack.svg" alt="Instagram" />
@@ -111,11 +107,20 @@ export default function RootLayout({ children }) {
                   @SENDPOLIFIX
                 </a>
                 <a href="">
-                  <img width="24px" src="/mail.svg" alt="Mail" />
+                  <MailIcon />
                   admin@polifixconsults.com
+                </a>
+                <a href="">
+                  <LucideLinkedin fontSize={"30px"} />
+                  @PoliFIX Inc
+                </a>
+                <a href="">
+                  <FacebookIcon fontSize={"30px"} />
+                  @PoliFIX
                 </a>
               </div>
             </footer>
+              <p className="copyright">PoliFIX &copy; 2025</p>
           </div>
         </QueryClientProvider>
       </body>
