@@ -96,31 +96,25 @@ export default function RootLayout({ children }) {
                 <h3>Contact Us</h3>
                 <a href="https://www.youtube.com/@TheCivicPolicyArchive">
                   <img width="24px" src="/youtubeBlack.svg" alt="YouTube" />
-                  @Polifix Podcast
                 </a>
                 <a href="https://www.instagram.com/sendpolifix?igsh=MW9mcWowaWY4Njd4dw%3D%3D&utm_source=qr">
                   <img width="24px" src="/instagramBlack.svg" alt="Instagram" />
-                  @SENDPOLIFIX
                 </a>
                 <a href="https://x.com/sendpolifix?s=11">
                   <img width="24px" src="/twitterBlack.svg" alt="Twitter" />
-                  @SENDPOLIFIX
                 </a>
                 <a href="">
                   <MailIcon />
-                  admin@polifixconsults.com
                 </a>
-                <a href="">
+                <a href="https://www.linkedin.com/in/polifix-inc-045714242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
                   <LucideLinkedin fontSize={"30px"} />
-                  @PoliFIX Inc
                 </a>
-                <a href="">
+                <a href="https://www.facebook.com/PoliFIXnig?rdid=akpNYVVGuegpMKWy&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19JN6qd9SY%2F#">
                   <FacebookIcon fontSize={"30px"} />
-                  @PoliFIX
                 </a>
               </div>
             </footer>
-              <p className="copyright">PoliFIX &copy; 2025</p>
+            <p className="copyright">PoliFIX &copy; 2025</p>
           </div>
         </QueryClientProvider>
       </body>
