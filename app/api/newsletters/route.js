@@ -6,7 +6,8 @@ export async function GET(request) {
   const BASE = `https://${DC}.api.mailchimp.com/3.0`;
 
   try {
-    const url = `${BASE}/campaigns?status=sent&count=10&fields=campaigns.id,campaigns.settings.subject_line,campaigns.settings.title,campaigns.send_time,campaigns.archive_url,total_items`;
+   const url = `${BASE}/campaigns?status=sent&count=10&sort_field=send_time&sort_dir=DESC&fields=campaigns.id,campaigns.settings.subject_line,campaigns.settings.title,campaigns.send_time,campaigns.archive_url,total_items`;
+
 
     const resp = await fetch(url, {
       headers: {

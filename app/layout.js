@@ -114,7 +114,7 @@ export default function RootLayout({ children }) {
                 </a>
               </div>
             </footer>
-            <p className="copyright">PoliFIX &copy; 2025</p>
+            <p className="copyright">PoliFIX &copy; 2026</p>
           </div>
         </QueryClientProvider>
       </body>

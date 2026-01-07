@@ -28,7 +28,7 @@ export default function page() {
           <p>
             To be the leading policy consulting firm driving innovative,
             evidence-based, and inclusive governance solutions that transform
-            public and private i
+            public and private industries
           </p>
 
           <h3>MISSION</h3>

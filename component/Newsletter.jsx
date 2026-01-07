@@ -20,6 +20,7 @@ export default function Newsletter() {
         if (!res.ok) throw new Error("Failed to fetch newsletters");
         const data = await res.json();
         setCampaigns(data.campaigns);
+        console.log(data);
       } catch (err) {
         setError(err.message);
       } finally {
