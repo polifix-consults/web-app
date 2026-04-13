@@ -12,7 +12,7 @@ export const ArticleRenderer = ({ article }) => {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-brand-light">
-      <h1 className="text-4xl font-bold mb-8 text-brand-primary font-sans">
+      <h1 className="text-2xl md:text-4xl font-bold mb-8 text-brand-primary font-sans">
         {title || "Untitled"}
       </h1>
       {postImageUrl && (
@@ -26,7 +26,7 @@ export const ArticleRenderer = ({ article }) => {
         </div>
       )}
       {Array.isArray(body) && (
-        <div className="portable-text font-sans text-brand-gray-dark">
+        <div className="portable-text text-sm lg:text-base font-sans text-brand-gray-dark">
           <PortableText value={body} />
         </div>
       )}

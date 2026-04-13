@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </h1>
 
         {currentArticle.description && (
-          <p className="font-sans text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-gray-200 pl-5">
+          <p className="font-sans lg:text-lg md:text-xl text-gray-600 leading-relaxed border-l-4 border-gray-200 pl-5">
             {currentArticle.description}
           </p>
         )}
