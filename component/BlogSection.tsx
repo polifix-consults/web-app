@@ -14,16 +14,18 @@ const BlogSection = () => {
     isFetchingNextPage,
   } = useArticles();
 
-
   const loadMoreRef = useRef(null);
   console.log("Articles data:", data);
   if (data?.pages) {
     data.pages.forEach((page, idx) => {
-      console.log(`Page ${idx} articles:`, page.articles.map(a => ({ 
-        title: a.title, 
-        slug: a.slug?.current || "MISSING SLUG", 
-        hasSlug: !!a.slug?.current 
-      })));
+      console.log(
+        `Page ${idx} articles:`,
+        page.articles.map((a) => ({
+          title: a.title,
+          slug: a.slug?.current || "MISSING SLUG",
+          hasSlug: !!a.slug?.current,
+        })),
+      );
     });
   }
 
@@ -81,58 +83,62 @@ const BlogSection = () => {
               return null;
             }
             return (
-            <article
-              key={post.id || i}
-              className="group border-b border-gray-200 last:border-0"
-            >
-              <Link
-                href={`/digest/${post.slug.current}`}
-                className="flex flex-col md:flex-row gap-8 py-10 transition-all duration-300"
+              <article
+                key={post.id || i}
+                className="group border-b border-gray-200 last:border-0"
               >
-                {/* Image Container */}
-                <div className="w-full md:w-[40%] aspect-[16/10] relative overflow-hidden bg-gray-50">
-                  <Image
-                    src={post.mainImage?.asset?.url || "/placeholder.jpg"}
-                    alt={post.imageAlt || post.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-
-                {/* Content Container */}
-                <div className="w-full md:w-[60%] flex flex-col justify-center">
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="text-[10px] uppercase tracking-[0.2em] font-black text-black bg-gray-100 px-2.5 py-1">
-                      {post.category?.title || "Policy"}
-                    </span>
-                    <span className="text-[11px] text-gray-400 font-sans tracking-tight">
-                      {post.publishedAt
-                        ? new Date(post.publishedAt).toLocaleDateString(
-                            "en-US",
-                            { month: "long", day: "numeric", year: "numeric" },
-                          )
-                        : "Recent Story"}
-                    </span>
+                <Link
+                  href={`/digest/${post.slug.current}`}
+                  className="flex flex-col md:flex-row gap-8 py-10 transition-all duration-300"
+                >
+                  {/* Image Container */}
+                  <div className="w-full md:w-[40%] aspect-[16/10] relative overflow-hidden bg-gray-50">
+                    <Image
+                      src={post.mainImage?.asset?.url || "/placeholder.jpg"}
+                      alt={post.imageAlt || post.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
 
-                  {/* Reduced Title Size Here */}
-                  <h2 className="text-xl md:text-2xl font-bold leading-tight mb-3 group-hover:text-gray-600 transition-colors">
-                    {post.title}
-                  </h2>
+                  {/* Content Container */}
+                  <div className="w-full md:w-[60%] flex flex-col justify-center">
+                    <div className="flex items-center gap-4 mb-3">
+                      <span className="text-[10px] uppercase tracking-[0.2em] font-black text-black bg-gray-100 px-2.5 py-1">
+                        {post.category?.title || "Policy"}
+                      </span>
+                      <span className="text-[11px] text-gray-400 font-sans tracking-tight">
+                        {post.publishedAt
+                          ? new Date(post.publishedAt).toLocaleDateString(
+                              "en-US",
+                              {
+                                month: "long",
+                                day: "numeric",
+                                year: "numeric",
+                              },
+                            )
+                          : "Recent Story"}
+                      </span>
+                    </div>
 
-                  <p className="text-gray-600 text-sm md:text-base line-clamp-2 mb-6 leading-relaxed font-sans">
-                    {post.description}
-                  </p>
+                    {/* Reduced Title Size Here */}
+                    <h2 className="text-xl md:text-2xl font-bold leading-tight mb-3 group-hover:text-gray-600 transition-colors">
+                      {post.title}
+                    </h2>
 
-                  <div className="mt-auto">
-                    <span className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] border-b-2 border-black pb-1 group-hover:border-gray-400 transition-all">
-                      Read Full Story
-                    </span>
+                    <p className="text-gray-600 text-sm md:text-base line-clamp-2 mb-6 leading-relaxed font-sans">
+                      {post.description}
+                    </p>
+
+                    <div className="mt-auto">
+                      <span className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] border-b-2 border-black pb-1 group-hover:border-gray-400 transition-all">
+                        Read Full Story
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </article>
+                </Link>
+              </article>
             );
           })}
         </React.Fragment>
