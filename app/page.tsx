@@ -165,8 +165,8 @@ export default function Home() {
                     <PodcastSkeleton />
                     <PodcastSkeleton />
                   </>
-                ) : podcast?.data && Array.isArray(podcast.data) ? (
-                  podcast.data.map((item: any) => (
+                ) : podcast && Array.isArray(podcast) ? (
+                  podcast.map((item: any) => (
                     <div
                       key={item.id}
                       className="flex gap-4 mb-8 last:mb-0 group"

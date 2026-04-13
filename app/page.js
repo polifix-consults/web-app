@@ -122,9 +122,9 @@ export default function Home() {
                 <div className="podcastListBox">
                   {isLoading && <h1>Loading</h1>}
                   {!isLoading &&
-                    podcast?.data &&
-                    Array.isArray(podcast.data) &&
-                    podcast.data.map((index) => (
+                    podcast &&
+                    Array.isArray(podcast) &&
+                    podcast.map((index) => (
                       <div key={index.id} className="podcastList">
                         <div className="podcastImgBox">
                           <img src={index.thumbnail} />
@@ -140,10 +140,9 @@ export default function Home() {
                         </div>
                       </div>
                     ))}
-                  {!isLoading &&
-                    (!podcast?.data || !Array.isArray(podcast.data)) && (
-                      <p>No podcasts available</p>
-                    )}
+                  {!isLoading && (!podcast || !Array.isArray(podcast)) && (
+                    <p>No podcasts available</p>
+                  )}
                 </div>
               </div>
             </article>
