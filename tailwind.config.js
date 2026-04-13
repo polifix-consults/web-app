@@ -29,6 +29,7 @@ export default {
       },
       spacing: {
         gutter: "15px",
+        15: "15px",
       },
       container: {
         center: true,
