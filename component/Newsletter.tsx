@@ -18,9 +18,10 @@ export default function Newsletter() {
         const res = await fetch("/api/newsletters");
         if (!res.ok) throw new Error("Failed to fetch newsletters");
         const data = await res.json();
-        setCampaigns(data.campaigns);
+        setCampaigns(Array.isArray(data.campaigns) ? data.campaigns : []);
       } catch (err) {
         setError(err.message);
+        setCampaigns([]);
       } finally {
         setLoading(false);
       }

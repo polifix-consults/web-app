@@ -74,9 +74,11 @@ const BlogSection = () => {
 
   return (
     <div className="flex flex-col">
-      {data?.pages.map((page, index) => (
-        <React.Fragment key={index}>
-          {page.articles.map((post: any, i: number) => {
+      {data?.pages && Array.isArray(data.pages) ? (
+        data.pages.map((page, index) => (
+          <React.Fragment key={index}>
+            {page.articles && Array.isArray(page.articles) ? (
+              page.articles.map((post: any, i: number) => {
             // Skip articles without slugs and log them for debugging
             if (!post.slug?.current) {
               console.warn(`Article without slug at index ${i}:`, post.title);
@@ -140,9 +142,15 @@ const BlogSection = () => {
                 </Link>
               </article>
             );
-          })}
-        </React.Fragment>
-      ))}
+            })
+            ) : (
+              <p className="text-gray-500 text-sm font-sans">No articles available</p>
+            )}
+          </React.Fragment>
+        ))
+      ) : (
+        <p className="text-gray-500 text-sm font-sans">No data available</p>
+      )}
 
       {/* Infinite Scroll Trigger */}
       <div
