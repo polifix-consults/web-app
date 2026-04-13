@@ -39,8 +39,8 @@ export default function BlogPage() {
                 The Mission
               </h4>
               <p className="text-lg font-bold italic leading-tight">
-                "Bridging the gap between policymakers and citizens through
-                data-driven storytelling."
+                &quot;Bridging the gap between policymakers and citizens through
+                data-driven storytelling.&quot;
               </p>
             </div>
 
