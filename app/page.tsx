@@ -165,7 +165,7 @@ export default function Home() {
                     <PodcastSkeleton />
                     <PodcastSkeleton />
                   </>
-                ) : podcast && Array.isArray(podcast) ? (
+                ) : podcast?.length ? (
                   podcast.map((item: any) => (
                     <div
                       key={item.id}
