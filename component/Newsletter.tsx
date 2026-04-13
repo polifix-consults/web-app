@@ -51,9 +51,9 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 font-sans">
+    <div className="md:max-w-2xl md:mx-auto md:p-2 font-sans">
       {/* Subscription Form */}
-      <form className="flex mb-6 gap-2" onSubmit={handleSubmit}>
+      <form className=" flex-col md:flex-row lg:flex-row p-4 flex mb-6 gap-2" onSubmit={handleSubmit}>
         <input
           className="flex-1 px-3 py-2 border-2 border-brand-primary rounded text-base focus:outline-none focus:ring-2 focus:ring-brand-accent"
           type="email"
@@ -80,7 +80,7 @@ export default function Newsletter() {
         {error && <p className="text-red-600 font-sans">Error: {error}</p>}
 
         {/* Scrollable section */}
-        <div className="max-h-[450px] overflow-y-auto pr-2">
+        <div className="lg:max-h-[450px] md:max-h-[450px] overflow-y-auto pr-2">
           <div className="flex flex-col gap-4">
             {campaigns.map((c) => (
               <a
@@ -88,18 +88,18 @@ export default function Newsletter() {
                 href={c.archive_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex gap-4 border border-gray-300 rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow no-underline text-inherit"
+                className="flex p-1 gap-4 border border-gray-300 rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow no-underline text-inherit"
               >
-                <div className="w-2/5 max-w-[150px] overflow-hidden">
+                <div className="w-2/5 md:w-2/5 max-w-[150px] overflow-hidden">
                   <img
                     src={c.image}
                     alt={c.subject || c.title || "Newsletter"}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-3/5 flex flex-col p-3">
-                  <h3 className="text-base font-semibold mb-0 font-sans text-brand-primary">
-                    {c.subject || c.title || "Untitled"}
+                <div className="w-3/5 md:w-3/5 flex flex-col md:p-3">
+                  <h3 className="text-sm md:text-base font-semibold mb-0 font-sans text-brand-primary">
+                    {c.subject.slice(0,80) || c.title || "Untitled"}...
                   </h3>
                   <p className="text-sm mb-0 font-sans text-brand-gray-dark">
                     Sent on{" "}

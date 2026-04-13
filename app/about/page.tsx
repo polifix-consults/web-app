@@ -44,7 +44,7 @@ export default function About() {
       <section className="mb-24">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           <div className="w-full lg:w-1/2">
-            <h1 className="text-5xl lg:text-[4rem] uppercase font-bold tracking-tighter leading-[0.9] mb-8">
+            <h1 className="text-[2.5rem] md:text-5xl lg:text-[4rem] uppercase font-bold tracking-tighter leading-[0.9] mb-8">
               Transforming <br /> Governance <br /> with Precision
             </h1>
           </div>

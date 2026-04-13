@@ -143,7 +143,7 @@ export default function Home() {
             <h2 className="text-xl font-bold uppercase tracking-tight mb-6 border-l-4 border-black pl-4">
               PoliFIX Newsletter
             </h2>
-            <div className="bg-gray-50 p-8 border border-gray-100">
+            <div className="bg-gray-50  border border-gray-100">
               <p className="text-gray-600 text-sm mb-6 font-sans">
                 Subscribe to our newsletter:{" "}
                 <span className="font-bold text-black italic">
