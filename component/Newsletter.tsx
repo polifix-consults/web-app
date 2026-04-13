@@ -62,7 +62,10 @@ export default function Newsletter() {
           placeholder="Your email"
           required
         />
-        <button className="px-4 py-2 bg-brand-primary text-white rounded cursor-pointer hover:bg-brand-gray-dark transition-colors font-sans font-semibold uppercase text-sm" type="submit">
+        <button
+          className="px-4 py-2 bg-brand-primary text-white rounded cursor-pointer hover:bg-brand-gray-dark transition-colors font-sans font-semibold uppercase text-sm"
+          type="submit"
+        >
           {status === "subscribing" ? "Subscribing..." : "Subscribe"}
         </button>
       </form>

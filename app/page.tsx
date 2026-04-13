@@ -120,9 +120,7 @@ export default function Home() {
               fallback={
                 <div className="animate-pulse h-8 bg-gray-100 w-full"></div>
               }
-            >
-             
-            </Suspense>
+            ></Suspense>
           </nav>
 
           <div className="flex flex-col">
